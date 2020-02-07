@@ -1,0 +1,111 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage{statcourse}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[breaklinks=true,bookmarks=false,hidelinks]{hyperref}
+
+
+\statcoursefinalcopy
+
+
+\setcounter{page}{1}
+\begin{document}
+
+%%%%%%%%% TITLE
+\title{Master's Thesis Research Proposal}
+
+\author{Yuan Ting Lee  
+{\tt\small y.lee@hertie-school.org}
+}
+
+\maketitle
+%\thispagestyle{empty}
+
+
+% MAIN ARTICLE GOES BELOW
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%% BODY TEXT
+
+\section{Research paper summary (2 pages)}
+
+\paragraph{Discuss one key academic paper that is the most relevant to your project. You should summarise the paper, providing the title of the paper, the goal and achievement of the paper, your criteria for selecting the paper, solution proposed in the paper, data used in the paper, methods used in the paper, references to other (up to) 5 relevant papers.}
+
+\paragraph{Paper selection:} The first section of your proposal is a summary of a research paper that is relevant to your project. For example, if you are reimplementing a complex model, you should choose the paper that presents that model. If you are applying a particular method to a new task, you could choose the paper that presents the method. If you are developing a new variant of a particular model, you could choose the paper that presents the original model. There are other possible cases - use your judgment to choose what seems like the most relevant paper. 
+
+\paragraph{The summary:} Write a summary of the paper that a fellow IML student could understand. For most teams this will probably involve some key mathematical equations, but you don't have to exhaustively mathematically describe everything. You may include a diagram if you think it's important, but it shouldn't take up more than half a page. In your approximately 2-page summary, prioritise conveying the most important information and ideas of the paper. In particular, your summary should contain the following information (though you do not have to structure your summary in this order):
+
+\begin{itemize}
+\item (Required): The title of the paper, list of authors, publication venue, publication year, and URL. Put this at the top of your summary.
+\item What does this paper set out to do? What does it achieve that is new or noteworthy?
+\item Why did you choose this paper?
+\item If this paper proposes a solution for a particular task, clearly state what the task is.
+\item If this paper uses a particular dataset (or datasets), clearly state which they are.
+\item If this paper uses a particular evaluation metric (or metrics), clearly state which they are. Also state any important scores that the work achieves on these metrics (you don't have to list every single score, but if there are some key numbers, mention them).
+\item If this paper has any important models or techniques, describe them.
+\item If you like, you can reference other papers - e.g. to compare methods, or to explain the contribution or impact of your chosen paper. Though remember that you shouldn't have more than 5 references overall in the project proposal.
+\end{itemize}
+
+%begin{figure*}
+%\begin{center}
+%   \includegraphics[width=0.8\linewidth]{figures/google-scholar.pdf}
+%\end{center}
+%   \caption{Example illustrating how to get BibTeX references from Google Scholar as a 2-column figure.}
+%\label{fig:google-scholar-2col}
+%\end{figure*}
+
+\section{Project Descriptio}
+
+In this section, you will describe what you plan to do for your project. It's fine if your project eventually evolves into something different - that's a natural part of research. But your proposal should lay out a sensible initial plan. This section should answer the following questions (it's a good idea to structure your project description in this way, but you can structure differently if you like):
+
+\subsection{Motivation}
+
+Describe why your project is interesting. E.g., you can describe why your project could have a broader societal impact. Or, you may describe the motivation from a personal learning perspective.
+
+Describe the main goal(s) of your project. If possible, try to phrase this in terms of a scientific question you are trying to answer - e.g., your goal may be to investigate whether a particular model or technique performs well at a certain task, or whether you can improve a particular model by adding some new variant, or (for theoretical/analytical projects), you might have some particular hypothesis that you seek to confirm or disprove. Otherwise, your goal may be simply to successfully implement a complex model, and show that it performs well on a given task. Briefly motivate why you chose this goal - why do you think it is important, interesting, challenging and/or likely to succeed? If you have any secondary or stretch goals (i.e. things you will do if you have time), please also describe them. In this section, you should also make it clear how your project relates to your chosen paper.
+
+
+\subsection{Task}
+
+What ML or NLP task(s) will you address? This could be the same task as addressed by your chosen paper, but it doesn't have to be. Describe the task clearly (i.e. give an example of an input and an output, if applicable) - though if you already did this in the paper summary, there's no need to repeat.
+
+\subsection{Data}
+
+The data set that will be used in this project is a collection of tweets on the coal exit and coal commission in Germany, across the entire deliberation period of the coal commission process. This data is available via a practice partner agreement with Mercator Research Institute on Global Commons and Climate Change (MCC), where this dataset is available. 
+
+\subsection{Method}
+
+What neural method(s) are you planning to use? Describe the models and/or techniques you plan to use. If it's already described in the paper summary, no need to repeat. If you plan to explore a variant to a published method, focus on describing how your method will be different. Make it clear which parts you plan to implement yourself, and which parts you will download from elsewhere. If there is any part of your planned method that is original, make it clear.
+
+\subsection{Baseline}
+
+What baseline(s) will you use? Describe what methods you will use as baselines. Make it clear if these will be implemented by you, downloaded from elsewhere, or if you will just compare with previously published scores.
+
+\section{Evaluation}
+
+What would the successful outcome of your project look like? In other words, under which circumstances would you consider your project to be `successful'? How do you measure success, specific to this project, from a technical standpoint?
+
+How will you evaluate your results? Specify at least one well-defined, numerical, automatic evaluation metric you will use for quantitative evaluation. What existing scores will you be comparing against for this metric? For example, if you're reimplementing or extending a method, state what score(s) the original method achieved; if you're applying an existing method to a new task, mention the state-of-the-art performance on the new task, and say something about how you expect your method to perform compared to other approaches. If you have any particular ideas about the qualitative evaluation you will do, you can describe that too.
+
+
+\section{Timeline}
+
+
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{bibliography.bib}
+}
+
+\end{document}
