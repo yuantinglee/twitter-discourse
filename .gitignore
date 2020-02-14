@@ -27,3 +27,9 @@ notebook.md
 # BibTeX
 *.bbl
 *.blg
+
+# Microsoft
+*.xlsx
+*.docx
+*.xls
+*.doc
