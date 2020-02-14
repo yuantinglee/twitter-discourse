@@ -1,0 +1,86 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage{statcourse}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[breaklinks=true,bookmarks=false,hidelinks]{hyperref}
+
+
+\statcoursefinalcopy
+
+
+\setcounter{page}{1}
+\begin{document}
+	
+	%%%%%%%%% TITLE
+	\title{Master's Thesis Draft}
+	
+	\author{Yuan Ting Lee 
+		\\{\tt\small Hertie School}
+		\\{\tt\small y.lee@mpp.hertie-school.org}
+	}
+	
+	\maketitle
+	%%%%%%%%% BODY TEXT
+	\section{Initial Idea and Approach}
+	\paragraph{} In this project, the aim is to test whether events throughout the course of the coal commission led to a change in public consensus on the process as well as on the coal exit in Germany. The data set is a collection of tweets scraped from Twitter about the coal exit and the coal commission. The initial idea for the project was to test whether events throughout the course of the coal commission led to a change in public consensus on the process. 
+	
+	\paragraph{} The initial approach to the task was to use topic modelling to identify significant events and topics of discussion, followed by sentiment analysis to extract the affective states and subjective information in the tweets. 
+	
+	\section{Related Work}
+	\subsection{Papers that inspired the approach}
+	\paragraph{} The paper selected is titled ``Who Leads? Who Follows? Measuring Issue Attention and Agenda Setting by Legislators and the Mass Public Using Social Media Data" by Barberá \emph{et. al.} \cite{barberá_2019}
+	
+	\paragraph{} In this paper, the authors set out to determine whether the public or politicians lead the other in setting the political agenda. It is noteworthy in that it utilises vector autoregression (VAR) models to explore  (public's or politicians') priorities more strongly predict the relationship between citizens and politicians. The paper finds that legislators are more likely to follow, than to lead, discussion of public issues. The authors use a dataset comprising Twitter messages by legislators and the public during the 113th US Congress. 
+	
+	\paragraph{} The key takeaway from this paper is the way that the authors use tweets -- as a proxy to measure attention being paid to political issues as well as the usage of topic modelling as a technique to classify tweets into topics that "exhibit meaningful variation over time and across parties". 
+	
+	\paragraph{} Another paper that inspired the approach for this project is ``Network analysis reveals open forums and echo chambers in social media discussions of climate change" by Williams \emph{et. al.} \cite{WILLIAMS2015126} In this paper, a network analysis is conducted on the twitter debate on climate change topics. The tweets were collected by filtering for relevant hashtags (e.g. \#climatechange, \#globalwarming). 
+	
+	\paragraph{} In order to establish the networks, the researchers classified the active users in the dataset based on their expressed attitude towards climate change -- as "activists", "sceptics", or "neutral". The frequency of tweets by users in these groups was analysed, as well as their interactions with each other, based on the social networks on Twitter such as followers, retweets (weighted), and mentions (weighted). 
+	
+	\paragraph{} The use of hashtags to filter for tweets on a certain topic is noted, as this is a method that will be employed by this project as well. In addition, the manual classification of a user's attitude towards climate change based on their username, profile information and random selection of tweets is important as this could be one way of classifying users into groups for further analysis. This method can be extended to this project, or other automated classification methods could be considered as well. 
+	
+	\subsection{Papers proposing alternative approaches to the problem}
+	\paragraph{} As mentioned previously, the initial idea to assess the affective states in a tweet was to use sentiment analysis. An alternative approach is to use a neural network classifier to identify pro- and contra- tweets on a specific topic. This method is used in ``For Whom the Bot Tolls: A Neural Networks Approach to Measuring Political Orientation of Twitter Bots in Russia" by Stukal \emph{et. al.} \cite{stukal2019} In the paper, the authors collect tweets referring to different aspects of Russian politics using a list of keywords and hashtags. In particular, the authors focus on tweets sent out by bots. 
+	
+	\paragraph{} The authors present a systematic approach to identifying bots' political affiliations that is not based on externally supplied labels for bots. They use a neural network model that uses textual data (unigrams and bigrams, hashtags, mentions, and links) in the bag-of-words framework to predict the political orientation of bots that about Russian politics in 2015-2017. 
+	
+	\paragraph{} It is important to note that the method utilised by the authors is a supervised learning method that requires a labelled set. Hence, this still requires manual coding of the labelled set before the machine learning methods could be applied. 
+	
+	\subsection{Papers applying your methods to different tasks}
+	\paragraph{} The initial method of choice is topic modelling. Topic modelling is the use of an unsupervised learning algorithm to assign documents in a corpus into multiple categories, which can be interpreted as topics. It has increasingly been used in the field of political science as it allows for summaries of the language used in policy debates (online on social media, or in print) via topics. Examples of topic modelling being used in other contexts include the study of policy priorities of the European Union \cite{isoaho2019} and the discourse analysis of the representation of Muslims and Islam on social media \cite{TORNBERG2016132}. 
+	
+	\paragraph{} In the paper by Isoaho \emph{et. al.}, the authors utilise a text-as-data approach to analyse the policy documents surrounding the European Energy Union. The authors use topic output as signals of policy ideas and issues. This approach is similar to what this thesis project seeks to do with topic modelling -- to extract important themes relating to a specific policy (the coal exit in Germany in this case). 
+	
+	\paragraph{} In the paper by Törnberg \emph{et. al.}, topic modelling is used to inductively find topics within a large corpus of posts on a Swedish internet forum containing keywords relating to Muslims and Islam. Subsequently, the authors choose to focus on central topics relating to Muslims and Islam and investigate how these evolve over the years. As such, topic modelling is used to generate the topics and their constituent words and documents are then qualitatively analysed by the authors. This is of note, as it means that the qualitative and quantitative aspects of the analysis are integrated in this paper. 
+	
+	\paragraph{} The other core method in the initial approach is sentiment analysis, which in this project will be used to extract the affective states and tones of tweets. An example of sentiment analysis being used is in ``Rapidly declining remarkability of temperature anomalies may obscure public perception of climate change" by Moore \emph{et. al.}, where the authors use sentiment analysis tools to analyse the human evaluation of local temperature anomalies \cite{Moore4905}. % why is this reference not compiling !   
+	
+	\paragraph{} The authors used two sentiment analysis tools -- VADER (Valence Aware Dictionary and sEntiment Reasoner) and LIWC (Linguistic Inquiry and Word Count. Both of these tools are lexicon-based, which means that they consist of a dictionary with words scored as either positive, negative, or neutral. Sentiment analysis is conducted by averaging the scores of the words in the tweets that correspond to the lexicon of each tool. VADER is specifically designed to analyse text from social media, while LIWC provides a more general dictionary built from the evaluations of human judges. As a result, it is important for sentiment analysis to have a robust tool for identifying the sentiment of a text, in the language of the text as well (German in this case). 
+
+	\section{Implications for project}
+	\paragraph{} After consideration of the initial approach and a look at the related work in this field, it can be seen that there are many approaches that can be used to solve the central question of whether events throughout the course of the coal commission led to a change in public consensus on the process and on the coal exit in Germany. 
+	
+	\paragraph{} The initial approach of using topic modelling can still be used, but it might be better to use it as a baseline approach - to get an understanding of what the salient topics in the tweet corpus are.  Following from that, there are a couple of ways to proceed. First, the method used by Stukal \emph{et. al.} could be used to classify tweets that are for or against the coal commission and the coal exit in Germany. This would involve a manual classification step followed by training different models on a training set of tweets before selecting a final model to use for implementation. Following from that, qualitative analysis of the tweets that are predicted to be pro-coal commission and/or pro-coal exit in Germany (and vice versa) can be conducted to determine if a consensus was reached amongst the public at the end of the coal commission process. 
+	
+	\paragraph{} Otherwise, an alternative approach would be to continue with the original approach of using sentiment analysis to analyse the affective positions of tweets. This would involve searching for an established German lexicon-based sentiment analysis tool, as well as a working implementation of it. The position of tweets would thus be ranked on a negative to positive scale based on the words used in the tweet itself. 
+	
+	\paragraph{} Using a dictionary-based sentiment analysis tool appears to be more straightforward when it comes to analysis, as the rating of a tweet's position is based on the aggregate of scores of the words used in the tweet. In comparison, using a supervised machine learning method to classify the tweets involves a more complicated process where the grounds for classification may not be clear on the outset (a ``black box" process), especially if neural networks are involved. However, both methods cannot be directly compared since they aim to do slightly different things and there is no accuracy metric for sentiment analysis compared to supervised machine learning methods. 
+	
+	\paragraph{} Moving forward, both methods should be tested as part of an exploratory analysis step to see what results are produced, then further assessed to decide which way should be chosen to proceed with further analysis. 
+	
+	{\small
+		\bibliographystyle{ieee}
+		\bibliography{bibliography.bib}
+	}
+	
+\end{document}
