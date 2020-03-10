@@ -119,10 +119,10 @@
 \RequirePackage[noend]{algpseudocode}
 \RequirePackage{changepage}
 \RequirePackage[twoside,%
-				letterpaper,includeheadfoot,%
-				layoutsize={8.125in,10.875in},%
-                layouthoffset=0.1875in,%
-                layoutvoffset=0.0625in,%
+				a4paper,includeheadfoot,%
+				%layoutsize={8in,11.5in},%
+                %layouthoffset=0.1875in,%
+                %layoutvoffset=0.0625in,%
                 left=38.5pt,%
                 right=43pt,%
                 top=43pt,% 10pt provided by headsep
