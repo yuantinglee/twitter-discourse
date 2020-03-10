@@ -2,6 +2,7 @@
 \documentclass[10pt,twocolumn,twoside,lineno]{pnas-new}
 % Use the lineno option to display guide line numbers if required.
 
+\usepackage{setspace}
 \templatetype{pnasresearcharticle}
 
 \title{Public Perceptions on the Coal Debate on Twitter: Reactions to a Corporate Decision-Making Policy Process}
@@ -31,7 +32,7 @@ Abstract goes here
 %\dates{This manuscript was compiled on \today}
 
 \begin{document}
-
+\onehalfspacing
 \maketitle
 \thispagestyle{firststyle}
 \ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
@@ -41,18 +42,22 @@ Abstract goes here
 Multi-stakeholder commissions present an important instrument for incorporating external interests into political decision-making. It can be seen as an element of ``negotiation democracy'', whereby the stakeholders in the commission decide on a policy outcome, or deliver policy recommendations via deliberations and negotiations. Depending on the policy field, representatives of business, science, the social partners, churches, associations and societies can be appointed and thus accelerate the later public discussion. \cite{Siefken2016}
 
 % Examples of multi-stakeholder commissions in policy-making
-The use of multi-stakeholder commissions have been used in environmental policy decision-making in Germany before, in the planning of a nuclear phase-out. Although 
+The use of multi-stakeholder commissions have been used in environmental policy decision-making in Germany before, in the planning of a nuclear phase-out. Although an exit from nuclear power had been previously agreed to by the federal government, %cite
+an external commission, titled the ``Ethics Commission for a Secure Energy Supply'', was set up in 2011 to examine the technical and ethical aspects of nuclear energy, as well as develop proposals for the transition to renewable energies. This commission comprised representatives from churches, science, as well as trade unions, and was headed by Klaus Töpfer, the former German Federal Minister for the Environment. % add something about the process of the commission
 
 % Coal Commission 
-The Coal Commission, formally known as the Commission on Growth, Structural Change and Employment, is such an example of expert commissions. It was set up by the German government under the Federal Ministry for Economy and Energy (BMWi), and was tasked with developing an overarching approach to managing the coal phase-out’s technical, legal, economic and social impacts.
+The coal commission, formally known as the Commission on Growth, Structural Change and Employment, is another example of a multi-stakeholder commission. It was set up by the German government in 2018 under the Federal Ministry for Economy and Energy (BMWi), and was tasked with developing an overarching approach to managing the coal phase-out’s technical, legal, economic and social impacts. This was done so under the backdrop of ... 
+
+The coal commission 
 
 % Link to public opinion 
-\textbf{Criticisms have emerged about the process of the coal commission, namely that ....}
+Criticisms have emerged about the process and outcome of the coal commission, namely that the recommendations that it propose are not consistent with the Paris Agreement \cite{klimareporter2019a}, nor did it meet Germany's own climate targets. 
+It has been framed as a victory for the coal regions and industries, but the final report, dubbed the ``coal compromise'', has also been criticised by environmental activists for not reflecting a consensus. \cite{klimareporter2019,endegelaende2019}  
+
+The process of the German coal commission thus presents a unique situation for analysis: is there a relationship between the seemingly ``corporatist'' process of such a multi-stakeholder commission and public opinion? Did the coal commission, through its process of incorporating members representing different interests, help reach consensus in the wider public as well, or did its final report reflect a lack of consensus, as claimed by its critics?
 
 % Twitter and social media data
-
-
-The process of the German coal commission thus presents a unique situation for analysis: is there a relationship between the seemingly ``corporatist” process of such an expert commission and public opinion, as represented on social media, on the topic? Here, tweets from Twitter are used to represent public opinion on social media, in part due to their high granularity which allows for observations on swiftly changing temporal patterns on topic salience.
+as represented on social media, on the topic? Here, tweets from Twitter are used to represent public opinion on social media, in part due to their high granularity which allows for observations on swiftly changing temporal patterns on topic salience.
 
 \section*{Related Work} \label{sec:relatedwork}
 
@@ -66,6 +71,8 @@ In addition, in order to understand the public reaction to the deliberative proc
 \section*{Data} \label{sec:data}
 The data used in this project was collected via a two-part process, using two python packages: \texttt{twint} to download the tweets based on specific queries, and \texttt{tweepy} to populate the tweets with extended tweet information. %be more specific and clear here
 
+% dates for collection 
+
 % insert figure on data collection
 
 The selection process for choosing tweets to analyse stems from the research question at hand, which is to understand the greater coal debate in Germany on Twitter. The final collection of tweets thus include two sets of tweets collected using two different search strategies. The first search strategy includes terms that directly relate to the coal exit in Germany - \{Kohlekommission, Kohleausstieg, Kohlefrei\}.\footnote{Translation: Coal commission, Coal exit, Coal free}
@@ -75,6 +82,7 @@ The other set of tweets is obtained from a general search for tweets on coal ("K
 The two collections are then combined and duplicates are removed, and the final set is then filtered for tweets in German, which can be obtained as a result from querying the Twitter API. 
 
 In addition to the above set, another set of tweets was collected to use as a baseline for comparison. This set includes the search terms of \{Klima, Erderwärmung, globale Erärmung, Treibhauseffekt\}\footnote{Translation: Climate, Earth warming,Global warming, Greenhouse effect}.
+% make note about data collection issue with dates going back 
 
 \begin{figure} 
 	\begin{center}
@@ -107,7 +115,7 @@ Parallel to the paradigms in \cite{Turney2003}, SentiWS uses a set of German see
 \label{eq:pmi}
 \text{PMI}(w_1,w_2) = \log_2\left(\frac{P(w_1 \& w_2)}{P(w_1) \cdot P(w_2)}\right)
 \end{equation}
-where \(P(w)\) is the probability that \(w\) occurs and \(P(w_1 \& w_2)\) is the probability that \(w_1\) and \(w_2\) co-occur. The probabilities were estimated using frequencies and co-occurrence statistics on an internal German-language corpus by the creators of SentiWS consisting of approximately 100 Million sentences. The final weights are then scaled to the interval of [-1;1] and rounded to 4 decimal places with +1.0 being absolutely positive and −1.0 being absolutely negative.
+where \(P(w)\) is the probability that \(w\) occurs and \(P(w_1 \& w_2)\) is the probability that \(w_1\) and \(w_2\) co-occur. The probabilities were estimated using frequencies and co-occurrence statistics on an internal German-language corpus by the creators of SentiWS consisting of approximately 100 million sentences. The final weights are then scaled to the interval of [-1;1] and rounded to 4 decimal places with +1.0 being absolutely positive and -1.0 being absolutely negative.
 
 \begin{figure} 
 	\begin{center}
@@ -131,32 +139,32 @@ where \(s_i\) is the polarity weighting score of a word given in SentiWS, and \(
 
 \begin{figure} 
 	\begin{center}
-		\includegraphics[width=\linewidth]{figures/dailyavgsenti_adjusted}
+		\includegraphics[width=\linewidth]{figures/dailyavgsenti}
 	\end{center}
-	\caption{Daily average sentiment score of tweets, adjusted for 3 day moving average}
-	\label{fig:tweet_score_adjusted}
+	\caption{Daily average sentiment score of tweets}
+	\label{fig:tweet_score}
 \end{figure}
 
-\begin{figure}
+\begin{figure*}[tp]
 	\begin{center}
-		\includegraphics[width=\linewidth]{figures/tweet_count_event_timeline}
+		\includegraphics[width=0.8\textwidth]{figures/tweet_count_event_timeline}
 	\end{center}
 	\caption{Daily count of tweets throughout coal commission process against events throughout coal commission process}
 	\label{fig:tweet_count_event_timeline}
-\end{figure}
+\end{figure*}
 
-Fig. \ref{fig:tweet_score_adjusted} shows the daily average tweet scores, corrected for with a 3 day moving average. At a glance, the variation in sentiment scores decrease over time. This could signify the reaching of a consensus over time as opinions tend to converge, thus leading to less extreme sentiments being displayed. 
+Fig. \ref{fig:tweet_score} shows the daily average tweet scores, corrected for with a 3 day moving average. At a glance, the variation in sentiment scores decrease over time. This could signify the reaching of a consensus over time as opinions tend to converge, thus leading to less extreme sentiments being displayed. 
 
 \subsubsection*{Event Analysis} 
 Significant events from the coal commission process were taken from Clean Energy Wire's report on the events following the coal commission. \cite{Amelang2019} In Fig. \ref{fig:tweet_score_event_timeline}, the date of significant events are overlaid on the same plot as the daily average sentiment score of tweets. 
  
-\begin{figure} 
+\begin{figure*}[bp] 
 	\begin{center}
-		\includegraphics[width=\linewidth]{figures/tweet_score_event_timeline}
+		\includegraphics[width=0.8\textwidth]{figures/tweet_score_event_timeline}
 	\end{center}
 	\caption{Daily average sentiment score of tweets against events throughout coal commission process}
 	\label{fig:tweet_score_event_timeline}
-\end{figure}
+\end{figure*}
 
 A further look at specific events in \ref{fig:tweet_count_event_timeline} show that there is an uptick in the frequency of tweets when significant events take place. In particular, the day with the most number of tweets in the dataset was on the 26th of January 2019, which was when the coal commission released its final report with recommendations on how to manage the coal phase-out in Germany. 
 

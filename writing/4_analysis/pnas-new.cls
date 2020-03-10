@@ -154,7 +154,7 @@
 %% If not, try to use pnas2011.bst instead
 %% If both aren't available, fall back to
 %% unsrtnat
-\RequirePackage[numbers,sort&compress,merge,round]{natbib}
+\RequirePackage[numbers,sort&compress,merge]{natbib}
 \setlength{\bibsep}{0.0pt}
 \IfFileExists{pnas-new.bst}{
   \bibliographystyle{pnas-new}
@@ -172,7 +172,7 @@
 
  
 \renewcommand\@biblabel[1]{ #1.} % Remove brackets from label
-\def\tagform@#1{\maketag@@@{\bfseries(\ignorespaces#1\unskip\@@italiccorr)}}
+\def\tagform@#1{\maketag@@@{\bfseries[\ignorespaces#1\unskip\@@italiccorr]}}
 \renewcommand{\eqref}[1]{\textup{{\normalfont Eq.~(\ref{#1}}\normalfont)}}
 
 
@@ -217,11 +217,11 @@
 % Footers
 \lfoot{}%
 \cfoot{}%
-\rfoot{}%
+\rfoot{\hspace{7pt}|\hspace{7pt}\thepage}%
 
 %\fancyfoot[LE]{\footerfont\textbf{\thepage}\hspace{7pt}|\hspace{7pt}\@ifundefined{@doi}{}{\@doi}}
 %\fancyfoot[RO]{\footerfont PNAS\hspace{7pt}|\hspace{7pt}\textbf{\today}\hspace{7pt}|\hspace{7pt}vol. XXX\hspace{7pt}|\hspace{7pt}no. XX\hspace{7pt}|\hspace{7pt}\textbf{\thepage}}
-\fancyfoot[RE,LO]{\footerfont\@ifundefined{@leadauthor}{}{\@leadauthor}\ifnum \value{authors} > 1\hspace{5pt}\textit{et al.}\fi}
+%\fancyfoot[RE,LO]{\footerfont\@ifundefined{@leadauthor}{}{\@leadauthor}\ifnum \value{authors} > 1\hspace{5pt}\textit{et al.}\fi}
 
 \renewcommand{\headrulewidth}{0pt}% % No header rule
 \renewcommand{\footrulewidth}{0pt}% % No footer rule
