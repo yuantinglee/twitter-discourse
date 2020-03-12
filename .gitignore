@@ -33,3 +33,6 @@ notebook.md
 *.docx
 *.xls
 *.doc
+
+# Data
+*.csv
