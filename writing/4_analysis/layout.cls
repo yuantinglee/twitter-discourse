@@ -23,7 +23,7 @@
 % to produce the PDF, not dvis -> ps -> pdf nor dvipdf
 % 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{pnas-new}[2018/05/06, v1.44]
+\ProvidesClass{layout}[2018/05/06, v1.44]
 \AtEndOfClass{\RequirePackage{microtype}}
 % Option for line numbers
 \newif\if@pnaslineno
