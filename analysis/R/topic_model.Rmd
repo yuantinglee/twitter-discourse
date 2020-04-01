@@ -1,0 +1,258 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+## Topic model
+
+For STM the number of observations in content covariate (7897), prevalence covariate (5768), and documents (7897) are not all equal. So removing missings from prevalence covariates and corresponding documents with missing covariates.
+
+```{r, message=FALSE}
+library(quanteda)
+library(tidyverse)
+library(stm)
+library(tidytext)
+library(data.table)
+```
+
+```{r}
+texts_de <- read_csv('../texts_de_comb_20200309.csv')
+```
+
+```{r}
+# create two binary variables: bef/aft coal commission establishment and bef/aft coal commission report
+texts_de$date_only = as.Date(texts_de$date_only)
+texts_de$establishment =  ifelse((texts_de$date_only >= as.Date('2018-06-06')), 1, 0)
+texts_de$report =  ifelse((texts_de$date_only >= as.Date('2019-01-26')), 1, 0)
+```
+
+```{r}
+#Keeping only complete cases for STM model
+#nn <- as.data.table(full_files)
+
+complete_info <- na.omit(texts_de)
+
+corpus <- corpus(complete_info, text_field = "text") 
+```
+
+
+```{r}
+#Tokenization and basic pre-processing
+tok.sm <- tokens(corpus, what = "word",
+              remove_numbers = TRUE, 
+              remove_punct = TRUE,
+              remove_symbols = TRUE,
+              #remove_twitter = TRUE,
+              #remove_hyphens = TRUE,
+              remove_url = TRUE,
+              verbose = TRUE)
+```
+
+```{r}
+# save tokens as R object
+saveRDS(tok.sm, "toksm.rds")
+```
+
+```{r}
+# reload tokens
+tok.sm <- readRDS("toksm.rds")
+```
+
+```{r}
+#DFM creation from tokens, removing stopwords, and stemming.
+dfm <- dfm(tok.sm, 
+           tolower = TRUE,
+           remove=stopwords("german"),
+       #    stem=TRUE, 
+           verbose = TRUE)
+
+```
+
+
+```{r}
+dfm.m <- dfm_select(dfm, c("[\\d-]", "[[:punct:]]", "^.{1}$"), 
+                           selection = "remove", 
+                    valuetype="regex", verbose = TRUE)
+
+```
+
+```{r}
+# remove words that appear in less than X number of documents
+dfm.t <- dfm_trim(dfm.m,  min_docfreq=50, verbose=TRUE)
+```
+
+```{r}
+head(featnames(dfm.t),50)
+tail(featnames(dfm.t),50)
+```
+
+
+
+```{r message = FALSE, eval = FALSE}
+stm.dfm <- convert(dfm.t, to = "stm",  docvars = docvars(corpus))
+```
+
+
+
+```{r eval=FALSE}
+search <- searchK(stm.dfm$documents, stm.dfm$vocab, 
+                  K = c(3:6), 
+                  prevalence = ~factor(establishment) + factor(report),
+                  data = stm.dfm$meta,
+                  max.em.its = 100
+                  ) 
+
+search.results <- as.data.frame(search$results)
+readr::write_csv(search.results, "search.results2.csv")
+```
+
+
+
+```{r}
+search_results <- read_csv("search.results2.csv")
+```
+
+
+
+```{r}
+ggplot(search_results, aes(x=semcoh, y=exclus)) +
+    geom_point(size=5, shape =1, color = "green") +
+  geom_text(aes(label=K), size=2) +
+   geom_smooth(method="lm", se = FALSE, color = "red", size = .3) +
+  geom_vline(xintercept = mean(search_results$semcoh), size = .2, linetype="dashed") +
+    geom_hline(yintercept = mean(search_results$exclus), size = .2, linetype="dashed") +
+  theme_bw() +
+ # ggtitle("Selecting optimal number of topics") + 
+  xlab("Semantic coherence") + ylab("Exclusivity")
+
+#ggsave("optimal_topics.pdf")
+
+```
+
+
+
+
+```{r}
+topics6 <- stm(stm.dfm$documents, stm.dfm$vocab,  
+             prevalence = ~factor(establishment) + factor(report), 
+             data = stm.dfm$meta, 
+             K = 6, init.type = "Spectral", 
+             max.em.its = 100)
+```
+
+```{r}
+# save tm as R object
+saveRDS(topics6, "topics6.rds")
+```
+
+```{r}
+# read tm
+topics6 = readRDS("topics6.rds")
+```
+
+
+```{r}
+words <- labelTopics(topics6, n = 15)
+prob <- as.data.frame(words[1])
+frex <- as.data.frame(words[2])
+```
+
+```{r}
+labelTopics(topics6,n = 5)
+```
+
+```{r}
+data.frame(t(labelTopics(topics6, n = 10)$prob))
+```
+
+
+```{r}
+pdf("topic6_prob_words.pdf", width = 10, height = 7)
+
+plot(topics6,type="summary", labeltype = "prob", 
+     xlim = c(0, 1.5), 
+     n = 10, 
+     text.cex = .6, 
+     main = "Top 10 highest prob words")
+
+dev.off()
+```
+
+
+```{r}
+pdf("topic6_frex_words.pdf", width = 10, height = 7)
+
+plot(topics6,type="summary", labeltype = "prob", 
+     xlim = c(0, 1.5), 
+     n = 10, 
+     text.cex = .6, 
+     main = "Top 10 FREX words")
+
+dev.off()
+```
+
+
+
+```{r}
+con.eff1 <- estimateEffect(~ factor(establishment), 
+                          topics6, meta = stm.dfm$meta, 
+                          uncertainty = "Global")
+
+con.eff2 <- estimateEffect(~ factor(report), 
+                          topics6, meta = stm.dfm$meta, 
+                          uncertainty = "Global")
+```
+
+
+Topic 1: Climate Policy; Topic 2: Hambach Forest; Topic 3: stop words, Topic 4: stop words 2; Topic 5: Coal Commission; Topic 6: Climate Policy 2 
+
+```{r}
+topiclabels <- c("Climate Policy", "Hambach Forest", "stop words", "stop words 2", "Coal Commission", "Climate Policy 2")
+```
+
+
+```{r}
+pdf("establishment_effect.pdf", width = 10.5, height = 7)
+
+plot(con.eff1, covariate = "establishment",  
+     model = topics6, method = "difference", 
+     labeltype="custom", 
+     custom.labels=topiclabels, width=50,
+     cov.value1 = 1, cov.value2 = 0, verbose.labels = FALSE, 
+     main = "Change in topic proportion before and after \n establishment of coal commission",
+     xlim = c(-0.3,0.3)
+     )
+
+dev.off()
+```
+
+
+```{r}
+pdf("report_effect.pdf", width = 10.5, height = 7)
+
+plot(con.eff2, covariate = "report",  
+     model = topics6, method = "difference", 
+     cov.value1 = 1, cov.value2 = 0, verbose.labels = FALSE, 
+     labeltype="custom", custom.labels=topiclabels, width=35,
+     main = "Change in topic proportion before and after release of report", 
+     xlim = c(-0.3,0.3)
+     )
+
+dev.off()
+```
+
+
+```{r}
+
+plot(con.eff1, covariate = "establishment",  topics = 1,
+     model = topics6, method = "pointestimate",
+     verbose.labels = FALSE, labeltype = "custom",
+     )
+
+```
+
+
+
+
+
