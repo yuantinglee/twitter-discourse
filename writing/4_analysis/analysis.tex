@@ -136,7 +136,22 @@ s_{tweet} = \frac{\sum_{i=1}^{n} s_i f_i}{\sum_{i=1}^{n} f_i}
 \end{equation} 
 where \(s_i\) is the polarity weighting score of a word given in SentiWS, and \(f_i\) is the frequency of occurrence of the word in the tweet. 
 
+\subsection*{Word Shift}
+% Explanation of word shifts
+Building upon the analysis of tweet sentiment scores, word shift graphs represent a measure of the variation between the sentiment scores of two sets of texts. In these graphs, words are ranked by their descending absolute contribution to the change in average valence, between two sets of texts. 
 
+As tweets comprise words, the approach for finding the absolute contributions will be conducted on the word-level. If we consider two sets of texts, \(T_{ref}\) (reference) and \(T_{comp}\) (comparison) with average scores of \(s_{\text{avg}}^{\text{ref}}\) and \(s_{{\text{avg}}^{\text{comp}}\) respectively, to compare both texts, we write: 
+
+% need to modify eq so that is either represents entire text set i.e. with average score, or for a single word 	
+\begin{equation}
+\label{eq:text_difference}
+T_{comp} - T_{ref} = \frac{\sum_{i}^{N} s_i f_i^{\text{comp}}}{\sum_{i=1}^{N} f_i^{\text{comp}}} - \frac{\sum_{i,ref}^{N} s_i f_i^{\text{ref}}}{\sum_{i=1}^{N} f_i^{\text{ref}}}
+\end{equation} 	
+where \(s_i\) is the polarity weighting score of a word given in SentiWS, and \(f_i\) is the frequency of occurrence of the word in the entire text set. 
+
+Equation \ref{eq:text_difference} shows the difference between the normalised score product of each word in the two text sets, and the absolute numbers are then ranked. 
+
+ 
 
 \section*{Results} \label{sec:results}
 
@@ -176,26 +191,19 @@ In order to understand how the debate evolved over time, the tweet dataset used 
 
 In order to assess whether the focus of the debate had changed, topic modelling was performed on the two tweet sets, using the non-negative matrix factorisation (NMF) method with 5 topics. Fig. \ref{fig:topics_before} and \ref{fig:topics_after} show the top 10 words from the topics inferred from the two different sets of tweets. 
 
-\begin{figure} 
-	\begin{center}
-		\includegraphics[width=\linewidth]{figures/topics_before}
-	\end{center}
-	\caption{Topics from tweets made before coal commission establishment}
-	\label{fig:topics_before}
-\end{figure}
- 
-\begin{figure} 
-	\begin{center}
-		\includegraphics[width=\linewidth]{figures/topics_after}
-	\end{center}
-	\caption{Topics from tweets made after coal commission establishment}
-	\label{fig:topics_after}
-\end{figure}
-
 To look at how the language and sentiment changed over time, a method known as ``word valence shift graphs", first used in \cite{Dodds2011}, is employed. To do so, words are ranked by their absolute contributions to the change in average sentiment of one group relative to another. 
 
 % work for this not yet done
 In addition, in order to understand the debate on the German coal exit on Twitter, it is necessary to compare it to other debates on Twitter. Here, the climate debate is used as a reference. 
+
+\begin{figure*} 
+	\begin{center}
+		\includegraphics[width=\linewidth]{figures/wordshift_coal_climate}
+	\end{center}
+	\caption{Word shift graph comparing coal tweets to climate tweets}
+	\label{fig:wordshift_coal_climate}
+\end{figure*}
+
 
 \subsubsection*{Network Analysis}
 
