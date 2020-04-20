@@ -41,7 +41,7 @@ Abstract goes here
 Multi-stakeholder commissions present an important instrument for incorporating external interests into political decision-making. It can be seen as an element of ``negotiation democracy'', whereby the stakeholders in the commission decide on a policy outcome, or deliver policy recommendations via deliberations and negotiations. Depending on the policy field, representatives of business, science, the social partners, churches, associations and societies can be appointed and thus accelerate the later public discussion. \cite{Siefken2016}
 
 % Examples of multi-stakeholder commissions in policy-making
-The use of multi-stakeholder commissions have been used in environmental policy decision-making in Germany before, in the planning of a nuclear phase-out. Although an exit from nuclear power had been previously agreed to by the federal government, %cite
+The use of multi-stakeholder commissions have been used in environmental policy decision-making in Germany before, in the planning of a nuclear phase-out. Although an exit from nuclear power had been previously agreed to by the federal government, %cites
 an external commission, titled the ``Ethics Commission for a Secure Energy Supply'', was set up in 2011 to examine the technical and ethical aspects of nuclear energy, as well as develop proposals for the transition to renewable energies. This commission comprised representatives from churches, science, as well as trade unions, and was headed by Klaus Töpfer, the former German Federal Minister for the Environment. % add something about the process of the commission
 
 % Coal Commission 
@@ -84,7 +84,7 @@ The other set of tweets is obtained from a general search for tweets on coal ("K
 
 The two collections are then combined and duplicates are removed, and the final set is then filtered for tweets in German, which can be obtained as a result from querying the Twitter API. 
 
-In addition to the above set, another set of tweets was collected to use as a baseline for comparison. This set includes the search terms of \{Klima, Erderwärmung, globale Erärmung, Treibhauseffekt\}\footnote{Translation: Climate, Earth warming,Global warming, Greenhouse effect}.
+In addition to the above set, another set of tweets was collected to use as a baseline for comparison. This set includes the search terms of \{Klima, Erderwärmung, globale Erärmung, Treibhauseffekt\}\footnote{Translation: Climate, Earth warming, Global warming, Greenhouse effect}.
 % make note about data collection issue with dates going back 
 
 \begin{figure} 
@@ -140,7 +140,7 @@ where \(s_i\) is the polarity weighting score of a word given in SentiWS, and \(
 % Explanation of word shifts
 Building upon the analysis of tweet sentiment scores, word shift graphs represent a measure of the variation between the sentiment scores of two sets of texts. In these graphs, words are ranked by their descending absolute contribution to the change in average valence, between two sets of texts. 
 
-As tweets comprise words, the approach for finding the absolute contributions will be conducted on the word-level. If we consider two sets of texts, \(T_{ref}\) (reference) and \(T_{comp}\) (comparison) with average scores of \(s_{\text{avg}}^{\text{ref}}\) and \(s_{{\text{avg}}^{\text{comp}}\) respectively, to compare both texts, we write: 
+As tweets comprise words, the approach for finding the absolute contributions will be conducted on the word-level. If we consider two sets of texts, \(T_{ref}\) (reference) and \(T_{comp}\) (comparison) with average scores of \(s_{\text{avg}}^{\text{ref}}\) and \(s_{\text{avg}}^{\text{comp}}\) respectively, to compare both texts, we write: 
 
 % need to modify eq so that is either represents entire text set i.e. with average score, or for a single word 	
 \begin{equation}
@@ -157,9 +157,9 @@ Equation \ref{eq:text_difference} shows the difference between the normalised sc
 
 \begin{figure} 
 	\begin{center}
-		\includegraphics[width=\linewidth]{figures/dailyavgsenti}
+		\includegraphics[width=\linewidth]{figures/dailyavgsenti_7dma_baseline}
 	\end{center}
-	\caption{Daily average sentiment score of tweets}
+	\caption{7 day moving average sentiment score of tweets}
 	\label{fig:tweet_score}
 \end{figure}
 
@@ -189,11 +189,10 @@ A further look at specific events in \ref{fig:tweet_count_event_timeline} show t
 \subsubsection*{Word Shift}
 In order to understand how the debate evolved over time, the tweet dataset used so far is split into two categories by date -- before the establishment of the coal commission and after. The tweets that were made after the coal commission was established are then analysed in comparison to the tweets that were made before the coal commission's establishment. This presents an opportunity to look at how the debate changed over time, whether the focus of the debate had changed after the coal commission began its decision-making process, and how public sentiment changed over the course of the same process. 
 
-In order to assess whether the focus of the debate had changed, topic modelling was performed on the two tweet sets, using the non-negative matrix factorisation (NMF) method with 5 topics. Fig. \ref{fig:topics_before} and \ref{fig:topics_after} show the top 10 words from the topics inferred from the two different sets of tweets. 
-
 To look at how the language and sentiment changed over time, a method known as ``word valence shift graphs", first used in \cite{Dodds2011}, is employed. To do so, words are ranked by their absolute contributions to the change in average sentiment of one group relative to another. 
 
-% work for this not yet done
+
+
 In addition, in order to understand the debate on the German coal exit on Twitter, it is necessary to compare it to other debates on Twitter. Here, the climate debate is used as a reference. 
 
 \begin{figure*} 
@@ -206,11 +205,32 @@ In addition, in order to understand the debate on the German coal exit on Twitte
 
 
 \subsubsection*{Network Analysis}
+Another way of analysing the evolution of the coal debate on Twitter is to look at the retweet network of the dataset. In Twitter, a retweet refers to a re-post of a tweet, where another user chooses to share another user's tweet on their personal timeline. By taking Twitter users as nodes and retweets as edges, we can construct a retweet network and see which users retweet the most often from other users. From this, the community structure of the network can also be determined. The community structure of a network refers to the appearance of densely connected groups of vertices, with only sparser connections between groups \cite{Newman8577}. The strength of a community structure can be measured by its modularity, which is a measure of the extent to which like is connected to like in a network. It takes a value that is strictly less than 1, and it is positive if there are more edges between vertices of the same type than would be expected by chance, and negative if there are less. % cite Newman textbook here
 
-
+\begin{equation}
+\label{eq:modularity}
+Q = \frac{1}{2m} \sum_{i,j} \left(A_{ij} - \frac{k_i k_j} {2m}\right) \delta (c_i c_j)
+\end{equation} 	
 
 \section*{Discussion} \label{sec:discussion}
 
+\begin{figure*} 
+	\begin{center}
+		\includegraphics[width=\linewidth]{figures/rt_network_ht_period4}
+	\end{center}
+	\caption{Retweet network for period before release of coal commission report}
+	\label{fig:rt_network_bef}
+\end{figure*}
+
+\begin{figure*} 
+	\begin{center}
+		\includegraphics[width=\linewidth]{figures/rt_network_ht_period3}
+	\end{center}
+	\caption{Retweet network for period after release of coal commission report}
+	\label{fig:rt_network_aft}
+\end{figure*}
+
+Fig. \ref{fig:rt_network_bef} and \ref{fig:rt_network_aft} show the two retweet networks of the period before and after the release of the coal commission's report respectively. 
 
 %\acknow{Please include your acknowledgments here, set in a single paragraph. Please do not include any acknowledgments in the Supporting Information, or anywhere else in the manuscript.}
 
