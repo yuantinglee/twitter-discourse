@@ -123,8 +123,8 @@
 				%layoutsize={8in,11.5in},%
                 %layouthoffset=0.1875in,%
                 %layoutvoffset=0.0625in,%
-                left=38.5pt,%
-                right=43pt,%
+                left=3cm,%
+                right=3cm,%
                 top=43pt,% 10pt provided by headsep
                 bottom=32pt,%
                 headheight=0pt,% No Header
@@ -250,7 +250,7 @@
   {#1. }
   []
 \titleformat{\subsubsection}[runin]
-  {\sffamily\small\bfseries\itshape}
+  {\sffamily\small\bfseries}
   {\thesubsubsection.}
   {0.5em}
   {#1. }
