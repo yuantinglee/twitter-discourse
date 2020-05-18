@@ -289,20 +289,36 @@ Looking at the content of the tweet, the message is clear -- coal is postured as
 The two cases highlight the different ways of communication on Twitter. One, as in the case of the tweet about the Hambach forest, is through retweets, which propagates across many different groups of people on Twitter as each user's retweet will appear on their followers' timeline. Another, as in the case of the tweet originating from the website of WWF Germany, shows how Twitter is used as a medium for other people to share information from other sources on the Internet. 
 
 \subsubsection*{Word Shift}
-% [T: 750, C: 230]
+% [T: 750, C: 400]
 In order to understand how the debate evolved over time, the tweet dataset used so far is split into two categories by date -- before the establishment of the coal commission and after. The tweets that were made after the coal commission was established are then analysed in comparison to the tweets that were made before the coal commission's establishment. This presents an opportunity to look at how the debate changed over time, whether the focus of the debate had changed after the coal commission began its decision-making process, and how public sentiment changed over the course of the same process. 
 
-To look at how the language and sentiment changed over time, a method known as ``word valence shift graphs'', first used in \cite{Dodds2011}, is employed. To do so, words are ranked by their absolute contributions to the change in average sentiment of one group relative to another. As detailed in \ref{sec:method}, the top words driving the differences in the texts between the two periods are identified by finding the absolute differences in the product of the word frequency and word polarity in the two periods. The results are then plotted in Fig. \ref{fig:wordshift_coalcomm_report}. 
+To look at how the language and sentiment changed over time, a method known as ``word valence shift graphs'', first used in \cite{Dodds2011}, is employed. To do so, words are ranked by their absolute contributions to the change in average sentiment of one group relative to another. As detailed in the methods section, the top words driving the differences in the texts between the two periods are identified by finding the absolute differences in the product of the word frequency and word polarity in the two periods. The results are then plotted in Fig. \ref{fig:wordshift_coalcomm_report}. 
 
+% include stats figure here 
+% plus a zoom in on the sentiment score in that period 
 \begin{figure*} 
 	\begin{center}
 		\includegraphics[width=0.8\linewidth]{figures/wordshift_coalcomm_report}
 	\end{center}
-	\caption{Word shift graph comparing tweets made before and after the release of the report of the coal commission}
+	\caption{Word shift graph comparing tweets made before and after the release of the report of the coal commission\footnotemark}
 	\label{fig:wordshift_coalcomm_report}
 \end{figure*}
+\footnotetext{Translation: good, criticism, wrong, destruction, endangered, wants, blocked, criticized, better, end, block, worry, safe, problem, fight, good, fear, destroyed, threatened, helps, important, next, help, fast, faster, more important, success, protest, fight, solution, love, save, compensation, expansion, solidarity}
 
+\begin{figure*} 
+	\begin{center}
+		\includegraphics[width=0.3\linewidth]{figures/wordshift_coalcomm_report_totalscores}
+	\end{center}
+	\caption{Total scores of words before and after the release of the coal commission report, sorted by word polarity}
+	\label{fig:wordshift_coalcomm_report_totalscores}
+\end{figure*}
 
+Looking at Fig. \ref{fig:wordshift_coalcomm_report}, the first observation is that there are some very similar words on the list, for example ``gut''/``gute''\footnote{Translation: good} and ``zerstörung''/``zerstört''\footnote{Translation: destruction}, which are essentially different forms of the same word. This is a feature of the German language, and will be discussed in a later section. 
+
+% discuss word shift balances, what is driving
+In Fig. \ref{fig:wordshift_coalcomm_report}, the words are labelled by colour according to their individual polarity. In Fig. \ref{fig:wordshift_coalcomm_report_totalscores}, we can see that there is an increase in both negative words as well as positive words. This helps to explain why, looking at the sentiment score on 26 January 2020, there does not appear to be a significant difference in the score compared to the periods immediately before and after. 
+
+% word shift climate
 In addition, in order to understand the debate on the German coal exit on Twitter, it is necessary to compare it to other debates on Twitter. Here, the climate debate is used as a reference. 
 
 \begin{figure*} 
@@ -315,8 +331,8 @@ In addition, in order to understand the debate on the German coal exit on Twitte
 
 
 \subsubsection*{Network Analysis}
-% [T: 750, C: 250]
-Another way of analysing the evolution of the coal debate on Twitter is to look at the retweet network of the dataset. In Twitter, a retweet refers to a re-post of a tweet, where another user chooses to share another user's tweet on their personal timeline. By taking Twitter users as nodes and retweets as edges, we can construct a retweet network and see which users retweet the most often from other users. From this, the community structure of the network can also be determined. The community structure of a network refers to the appearance of densely connected groups of vertices, with only sparser connections between groups \cite{Newman8577}. The strength of a community structure can be measured by its modularity, which is a measure of the extent to which like is connected to like in a network. It takes a value that is strictly less than 1, and it is positive if there are more edges between vertices of the same type than would be expected by chance, and negative if there are less. % cite Newman textbook here
+% [T: 750, C: 270]
+Another way of analysing the evolution of the coal debate on Twitter is to look at the retweet network of the dataset. In Twitter, a retweet refers to a re-post of a tweet, where another user chooses to share another user's tweet on their personal timeline. By taking Twitter users as nodes and retweets as edges, we can construct a retweet network and see which users retweet the most often from other users. From this, the community structure of the network can also be determined. The community structure of a network refers to the appearance of densely connected groups of vertices, with only sparser connections between groups \cite{Newman8577}. The strength of a community structure can be measured by its modularity, which is a measure of the extent to which like is connected to like in a network. It takes a value that is strictly less than 1, and it is positive if there are more edges between vertices of the same type than would be expected by chance, and negative if there are less [CITE]. % cite Newman textbook here
 
 \begin{equation}
 \label{eq:modularity}
@@ -338,14 +354,37 @@ Q = \frac{1}{2m} \sum_{i,j} \left(A_{ij} - \frac{k_i k_j} {2m}\right) \delta (c_
 	\label{fig:rt_network_aft}
 \end{figure*}
 
-Fig. \ref{fig:rt_network_bef} and \ref{fig:rt_network_aft} show the two retweet networks of the period before and after the release of the coal commission's report respectively. 
+Fig. \ref{fig:rt_network_bef} and \ref{fig:rt_network_aft} show the two retweet networks of the period before and after the release of the coal commission's report respectively. Within each network, for communities with 500 nodes or more, the top 5 hashtags that are used in the community are also displayed.  
 
 \section*{Discussion} \label{sec:discussion}
-% caveats of using dictionary methods for sentiment analysis [T: 500]
+\subsection*{Limitations}
+\subsubsection*{Sentiment Analysis} 
+% caveats of using dictionary methods for sentiment analysis 
+% [T: 500, C: 430]
+The primary method of text analysis in this work has been sentiment analysis. As detailed earlier in the section on related work, there are two type of methods for sentiment analysis: lexical-based and machine-learning-based. Lexical, or dictionary-based methods make use of a predefined list of words, where each word has an associated sentiment or polarity weight. The results of lexical-based methods are thus heavily reliant on the dictionary used, and the context in which they were created \cite{Goncalves2013}. In this study, a pre-made, publicly available German dictionary, SentiWS, was used. It is a general resource, and not uniquely created for the context of studying the coal debate on Twitter. As a result, the words available in the dictionary may not reflect the full spectrum of words used in the coal debate, nor does it account for slang, which is common on social media networks but is rarely supported in dictionaries \cite{Hu2013}. 
 
-% drawbacks of using social media data, how to handle [T: 500]
+Some of the limitations of using dictionary methods are also evident from the results presented. In the cases where positive spikes were detected, further analysis of the tweet driving those spikes revealed that the intended sentiment of the text was not in fact positive, but rather sarcastic. Language construction is nuanced, and by reducing words to singular scores, some meaning will inevitably be lost. This will lead to a simplified result, which requires further analysis, as in the case here, to reveal the original sentiment. 
 
-% Implications of findings [T: 1K]
+One way of addressing this issue would be to use the alternative method, which is to use machine learning methods. Such methods often rely on supervised classification approaches, where sentiment detection is framed as a binary (i.e. positive or negative). Supervised approaches by nature require labelled data to train classifiers \cite{Pang2002}. This is advantageous in one sense as it allows for flexibility in creating trained models for specific purposes and contexts, but also has its drawbacks in that labelled data may not always be available. This means that existing labelled data may not always be suited for new data, as in the case of applying training data from standard long-form text to analyse social media text. Moreover, manually labelling data and creating a new data set is time intensive and costly. 
+
+No one method of sentiment analysis can replicate something that is fully manually classified, but its benefits, especially with dictionary methods, come in the form of its ease of automation, as well as speed in producing results. It is important, however, to take into account the limitations of such a method when analysing the results, as is in the cases presented above. 
+
+\subsubsection*{The German Language} 
+% limitations of language analysis in German 
+% [T: 500, C: ]
+
+Majority of the work done on sentiment analysis is conducted on the English language. In this study, the analysis is done on tweets in German as the policy case study is in Germany. 
+
+\subsubsection*{Social Media data} 
+% drawbacks of using social media data, how to handle 
+% [T: 500, C: ]
+%% emojis
+
+\subsection*{Policy Implications} 
+% Implications of findings 
+% [T: 1K, C: ]
+
+
 
 %%% END TEXT %%%
 
