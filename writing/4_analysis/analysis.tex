@@ -5,6 +5,7 @@
 \usepackage{setspace}
 \usepackage{gensymb}
 \usepackage{csquotes}
+\usepackage{xcolor}
 
 \title{The German Coal Debate on Twitter: Reactions to a Corporate Decision-Making Policy Process}
 
@@ -202,18 +203,24 @@ Equation \ref{eq:text_difference} shows the difference between the normalised sc
 	\label{fig:tweet_score}
 \end{figure}
 
-Fig. \ref{fig:tweet_count_event_timeline} shows the daily count of tweets throughout the coal commission process against events throughout the same process. Fig. \ref{fig:tweet_score} shows the 7 day moving average of tweet scores in the coal and climate datasets. 
-
 \subsection*{Sentiment scores against time} 
-% [T: 750, C: 690]
-% overall trend negative
-Looking at Fig. \ref{fig:tweet_score}, the first observation that can be drawn is that the average sentiment scores of both coal and climate tweets decrease over time. For most of 2017, the average score of coal and climate tweets hover around zero. This average for the climate tweets starts to decrease from the beginning of 2018, and steadily declines throughout the process of the coal commission, and remains constant around -0.025 even after the conclusion of the coal commission process. For the coal tweets, the average drops from the beginning of 2018 and remains constant around the -0.025 score as well. This suggests that the language used in both coal and climate discussions become more negative over time, of which the coal commission could have had an effect on. 
+% [T: 900, C: 750]
+\subsubsection*{Negative trend} % overall trend negative
+Fig. \ref{fig:tweet_score} shows the 7 day moving average of tweet scores in the coal and climate datasets. Looking at Fig. \ref{fig:tweet_score}, the first observation that can be drawn is that the average sentiment scores of both coal and climate tweets decrease over time. For most of 2017, the average score of coal and climate tweets hover around zero. This average for the climate tweets starts to decrease from the beginning of 2018, and steadily declines throughout the process of the coal commission, and remains constant around -0.025 even after the conclusion of the coal commission process. For the coal tweets, the average drops from the beginning of 2018 and remains constant around the -0.025 score as well. 
 
-% similar before and after but not during 
-Another observation that can be made is that the shape of the coal and climate timeseries correlate quite well both before and after the process of the coal commission, but not during. Looking at Fig. \ref{fig:tweet_score}, by breaking down the dates into three periods -- i. January 2017 to December 2017, ii. January 2018 to April 2019 and iii. May 2019 to February 2020, the differences in the sentiment score timeseries can be dissected. The spikes in the coal and climate tweet sentiment scores follow quite closely to each other in the first period, as well as in the third. However, they differ greatly in the second period, largely due to the variation of scores in the coal debate. % add some numbers here to substantiate
+Regression analysis also shows that the two time series have a negative slope. The slope of the coal timeseries is $-1.91 \times 10^{-5}$ and the slope of the climate timeseries is $-2.64 \times 10^{-5}$. In order to perform linear regression on dates, the dates are first converted into ordinal numbers. This suggests that the language used in both coal and climate discussions become more negative over time, of which the coal commission could have had an effect on. 
+
+% linreg table?
+
+\subsubsection*{Variation in coal and climate scores} % similar before and after but not during 
+Another observation that can be made is that the shape of the coal and climate timeseries correlate quite well both before and after the process of the coal commission, but not during. Looking at Fig. \ref{fig:tweet_score}, by breaking down the dates into three periods -- i. January 2017 to December 2017, ii. January 2018 to April 2019 and iii. May 2019 to February 2020, the differences in the sentiment score timeseries can be dissected. The spikes in the coal and climate tweet sentiment scores follow quite closely to each other in the first period, as well as in the third. However, they differ greatly in the second period, largely due to the variation of scores in the coal debate. 
+% add some numbers here to substantiate
 
 % greater variation in coal compared to climate
-In addition to the timeseries trends, comparing the two sentiment score timeseries of coal and climate tweets, it can be seen that there is a larger variation in sentiment scores in the coal dataset compared to that of climate. This is evident across the entire time period of the dataset. Throughout 2017, the variation in climate scores is 0.057, compared to 0.116 in the scores of coal tweets. This difference increases in the period surrounding as well as during the coal commission process from January 2018 to April 2019, where the variation in climate tweet scores is 0.061, compared to 0.217 in the scores of coal tweets. The difference in variation of the tweet scores between the datasets declines after the coal commission process, with a variation of 0.048 in climate tweets and 0.096 in coal tweets from May 2019 to February 2020. % add something about there being more climate tweets and also how the variation is measured
+In addition to the timeseries trends, comparing the two sentiment score timeseries of coal and climate tweets, it can be seen that there is a larger variation in sentiment scores in the coal dataset compared to that of climate. This is evident across the entire time period of the dataset. Throughout 2017, the variation in climate scores is 0.057, compared to 0.116 in the scores of coal tweets. This difference increases in the period surrounding as well as during the coal commission process from January 2018 to April 2019, where the variation in climate tweet scores is 0.061, compared to 0.217 in the scores of coal tweets. The difference in variation of the tweet scores between the datasets declines after the coal commission process, with a variation of 0.048 in climate tweets and 0.096 in coal tweets from May 2019 to February 2020. 
+
+% add something about there being more climate tweets and also how the variation is measured
+% table on absolute variation
 
 Here, consensus could be measured using a proxy, through the variation in positive and negative tweet scores, where a large difference denotes less consensus and a smaller difference denotes a greater consensus. The sentiment score timeseries thus suggests that consensus in the coal debate decreased across the period surrounding the coal commission, compared to before and after. In contrast, the consensus in the climate debate remains relatively stable over time. 
 
@@ -233,8 +240,8 @@ Overall, analysis of the sentiment scores of the coal and climate debate on Twit
 
 
 \subsection*{Event Analysis}
-% [T: 1750, C: 1438] 
-In Fig. \ref{fig:tweet_count_event_timeline} and \ref{fig:tweet_score_event_timeline}, the date of significant events are overlaid on the same plot as the daily average sentiment score of tweets. Significant events from the coal commission process were taken from Clean Energy Wire's report on the events following the coal commission \cite{Amelang2019}. 
+% [T: 1600, C: 1550] 
+Fig. \ref{fig:tweet_count_event_timeline} shows the daily count of tweets throughout the coal commission process against events throughout the same process. In Fig. \ref{fig:tweet_count_event_timeline} and \ref{fig:tweet_score_event_timeline}, the date of significant events are overlaid on the same plot as the daily average sentiment score of tweets. Significant events from the coal commission process were taken from Clean Energy Wire's report on the events following the coal commission \cite{Amelang2019}. 
  
 \begin{figure*} 
 	\begin{center}
@@ -244,11 +251,11 @@ In Fig. \ref{fig:tweet_count_event_timeline} and \ref{fig:tweet_score_event_time
 	\label{fig:tweet_score_event_timeline}
 \end{figure*}
 
-A further look at specific events in Fig. \ref{fig:tweet_count_event_timeline} show that there is an uptick in the frequency of tweets when significant events take place. In particular, the day with the most number of tweets in the dataset was on the 26th of January 2019, which was when the coal commission released its final report with recommendations on how to manage the coal phase-out in Germany. The average number of tweets made per day is also higher in the period surrounding the coal commission process at XX per day compared to before (XX) and after (XX). 
+A further look at specific events in Fig. \ref{fig:tweet_count_event_timeline} show that there is an uptick in the frequency of tweets when significant events take place. In particular, the day with the most number of tweets in the dataset was on the 26th of January 2019, which was when the coal commission released its final report with recommendations on how to manage the coal phase-out in Germany. {\color{red}The average number of tweets made per day is also higher in the period surrounding the coal commission process at XX per day compared to before (XX) and after (XX).}
 
 Looking at Fig. \ref{fig:tweet_score_event_timeline}, however, the variation in sentiment scores across time show that the tweets are not necessarily more extreme on the sentiment scale across the entire coal commission period. Rather, there are specific spikes in the scores slightly before the establishment of the coal commission, during the process of the coal commission, as well as after the conclusion of the coal commission with the release of its report. 
 
-\subsubsection*{Positive Peaks} % positive peaks
+\subsubsection*{Positive Peaks} 
 In Fig. \ref{fig:tweet_score_event_timeline}, there is only one large positive peak, on 11 April 2019. Analysis of the coal debate reveal that there was one specific tweet with a high sentiment score of 0.358 with 1100 retweets that was driving the high average tweet score for that day.  
 
 \begin{displayquote}
@@ -288,9 +295,11 @@ Looking at the content of the tweet, the message is clear -- coal is postured as
 
 The two cases highlight the different ways of communication on Twitter. One, as in the case of the tweet about the Hambach forest, is through retweets, which propagates across many different groups of people on Twitter as each user's retweet will appear on their followers' timeline. Another, as in the case of the tweet originating from the website of WWF Germany, shows how Twitter is used as a medium for other people to share information from other sources on the Internet. 
 
+In both cases, however, the negative sentiment arises from the usage of negative language to express the severity of the coal exit on the environment. In the first example, it is negative sentiment comes from how a lack of a coal exit will result in further forest clearings, impacting biodiversity negatively and leading to more carbon emissions. In the second, the negative sentiment comes from criticising the environmental and health ill-effects of coal. 
+
 \subsubsection*{Word Shift}
-% [T: 750, C: 400]
-In order to understand how the debate evolved over time, the tweet dataset used so far is split into two categories by date -- before the establishment of the coal commission and after. The tweets that were made after the coal commission was established are then analysed in comparison to the tweets that were made before the coal commission's establishment. This presents an opportunity to look at how the debate changed over time, whether the focus of the debate had changed after the coal commission began its decision-making process, and how public sentiment changed over the course of the same process. 
+% [T: 850, C: 888]
+In order to understand how the debate evolved over time, the tweet dataset used so far is split into two categories by date -- before the release of the report of the coal commission and after. The tweets that were made after the coal commission released its final report are then analysed in comparison to the tweets that were made before the report's release. This presents an opportunity to look at how the debate changed over time, whether the focus of the debate had changed after the coal commission began its decision-making process, and how public sentiment changed over the course of the same process. 
 
 To look at how the language and sentiment changed over time, a method known as ``word valence shift graphs'', first used in \cite{Dodds2011}, is employed. To do so, words are ranked by their absolute contributions to the change in average sentiment of one group relative to another. As detailed in the methods section, the top words driving the differences in the texts between the two periods are identified by finding the absolute differences in the product of the word frequency and word polarity in the two periods. The results are then plotted in Fig. \ref{fig:wordshift_coalcomm_report}. 
 
@@ -298,63 +307,84 @@ To look at how the language and sentiment changed over time, a method known as `
 % plus a zoom in on the sentiment score in that period 
 \begin{figure*} 
 	\begin{center}
-		\includegraphics[width=0.8\linewidth]{figures/wordshift_coalcomm_report}
+		\includegraphics[width=\linewidth]{figures/wordshift_coalcomm_report_composite}
 	\end{center}
-	\caption{Word shift graph comparing tweets made before and after the release of the report of the coal commission\footnotemark}
+	\caption{\textbf{Word shift graph comparing tweets made before and after the release of the report of the coal commission.} The reference text is roughly 112000 tweets from the coal dataset from 1 January 2017 to 25 January 2019. The comparison texts is roughly 113000 tweets from the coal dataset from 26 January 2019 to February 29 2020. An orange bar indicates a word with a positive polarity score. A blue bar indicates a word with a negative polarity score. Words on the right side are contributing to an increase in positive sentiment after the release of the coal commission report. Words on the left side are contributing to an increase in negative sentiment after the release of the coal commission report. Words with a blue bar on the left side of the graph and words with an orange bar on the right side of the graph are more prevalent in the tweets before the release of the coal commission's report. Words with a blue bar on the right side of the graph and words with an orange bar on the left side of the graph are more prevalent in tweets after the release of the coal commission's report. The subplot on the right shows the split in total word scores before and after the release of the coal commission report, sorted by word polarity. \footnotemark}
 	\label{fig:wordshift_coalcomm_report}
 \end{figure*}
 \footnotetext{Translation: good, criticism, wrong, destruction, endangered, wants, blocked, criticized, better, end, block, worry, safe, problem, fight, good, fear, destroyed, threatened, helps, important, next, help, fast, faster, more important, success, protest, fight, solution, love, save, compensation, expansion, solidarity}
 
-\begin{figure*} 
-	\begin{center}
-		\includegraphics[width=0.3\linewidth]{figures/wordshift_coalcomm_report_totalscores}
-	\end{center}
-	\caption{Total scores of words before and after the release of the coal commission report, sorted by word polarity}
-	\label{fig:wordshift_coalcomm_report_totalscores}
-\end{figure*}
-
 Looking at Fig. \ref{fig:wordshift_coalcomm_report}, the first observation is that there are some very similar words on the list, for example ``gut''/``gute''\footnote{Translation: good} and ``zerstörung''/``zerstört''\footnote{Translation: destruction}, which are essentially different forms of the same word. This is a feature of the German language, and will be discussed in a later section. 
 
-% discuss word shift balances, what is driving
-In Fig. \ref{fig:wordshift_coalcomm_report}, the words are labelled by colour according to their individual polarity. In Fig. \ref{fig:wordshift_coalcomm_report_totalscores}, we can see that there is an increase in both negative words as well as positive words. This helps to explain why, looking at the sentiment score on 26 January 2020, there does not appear to be a significant difference in the score compared to the periods immediately before and after. 
+% discuss word shift balances
+In Fig. \ref{fig:wordshift_coalcomm_report}, the words are labelled by colour according to their individual polarity. In Fig. \ref{fig:wordshift_coalcomm_report}, we can see that the usage of both negative words as well as positive words is more common in the tweets made before the release of the coal commission's report. This suggests that there was a fiercer debate on coal during the period of the coal commission, as opposed to after, when it released its final results. 
+
+The split in the balance of scores arising from positive and negative words, before and after the release of the coal commission's report, however, suggest that there is an increase in polarisation of sentiments on Twitter after the coal commission process. This helps to explain why, looking at the sentiment score on 26 January 2020, there does not appear to be a significant difference in the score compared to the periods immediately before and after. 
 
 % word shift climate
-In addition, in order to understand the debate on the German coal exit on Twitter, it is necessary to compare it to other debates on Twitter. Here, the climate debate is used as a reference. 
+In addition, in order to understand the debate on the German coal exit on Twitter, it is necessary to compare it to other debates on Twitter. Here, the climate debate is used as a reference. Fig. \ref{fig:wordshift_coal_climate} shows the word shift graph comparing the coal tweets against the climate tweets. In terms of the words that are driving the differences between the two datasets, the trends are largely similar to that in the previous figure comparing the tweets before and after the release of the coal commission's report. This means that positive and negative words both tend to appear more often in the climate dataset compared to coal. 
+
+In addition, the split in the balance of scores arising from positive and negative words between coal and climate tweets suggest that overall, sentiments in coal tweets are less polarised compared to that of climate tweets. This is not immediately apparent from the sentiment score timeseries plots, as those show the daily average sentiment score. This suggests that there might be more consensus on the coal debate on Twitter as compared to climate, which is not a surprising result as the coal debate can be considered as a sub-debate within the climate debate, which encompasses other topics. 
 
 \begin{figure*} 
 	\begin{center}
-		\includegraphics[width=0.8\linewidth]{figures/wordshift_coal_climate}
+		\includegraphics[width=\linewidth]{figures/wordshift_coal_climate_composite}
 	\end{center}
-	\caption{Word shift graph comparing coal tweets to climate tweets}
+	\caption{\textbf{Word shift graph comparing coal tweets to climate tweets.}}
 	\label{fig:wordshift_coal_climate}
 \end{figure*}
 
 
 \subsubsection*{Network Analysis}
-% [T: 750, C: 270]
-Another way of analysing the evolution of the coal debate on Twitter is to look at the retweet network of the dataset. In Twitter, a retweet refers to a re-post of a tweet, where another user chooses to share another user's tweet on their personal timeline. By taking Twitter users as nodes and retweets as edges, we can construct a retweet network and see which users retweet the most often from other users. From this, the community structure of the network can also be determined. The community structure of a network refers to the appearance of densely connected groups of vertices, with only sparser connections between groups \cite{Newman8577}. The strength of a community structure can be measured by its modularity, which is a measure of the extent to which like is connected to like in a network. It takes a value that is strictly less than 1, and it is positive if there are more edges between vertices of the same type than would be expected by chance, and negative if there are less [CITE]. % cite Newman textbook here
+% [T: 750, C: 480]
+% should some of this go to Method instead?
+Another way of analysing the evolution of the coal debate on Twitter is to look at the retweet network of the dataset. In Twitter, a retweet refers to a re-post of a tweet, where another user chooses to share another user's tweet on their personal timeline. By taking Twitter users as nodes and retweets as edges, we can construct a retweet network and see which users retweet the most often from other users. From this, the community structure of the network can also be determined. 
+
+The community structure of a network refers to the appearance of densely connected groups of vertices, with only sparser connections between groups \cite{Newman8577}. The goal of most community detection algorithms, implicit or explicit, is to find the best trade-off between a large intra-cluster density and a small inter-cluster density. The strength of a community structure can be measured by its modularity, which is a measure of the extent to which like is connected to like in a network. It takes a value that is strictly less than 1, and it is positive if there are more edges between vertices of the same type than would be expected by chance, and negative if there are less \cite{Newman8577}. Modularity is defined as: 
 
 \begin{equation}
 \label{eq:modularity}
 Q = \frac{1}{2m} \sum_{i,j} \left(A_{ij} - \frac{k_i k_j} {2m}\right) \delta (c_i c_j)
 \end{equation} 	
 
+where $m$ is the total number of edges in the network, $A_{ij}$ are the elements of the adjacency matrix, or the number of edges between vertices $i$ and $j$, $c_i$ is the label of the community to which the node i is assigned, and $k_i$ is the degree of node i. 
+
+Community detection algorithms perform maximisation of modularity, and from the definition of modularity above, a good partitioning of a network is therefore one in which there are fewer than expected edges between the communities. 
+
+In this study, the fast-greedy community detection algorithm is used \cite{Clauset2004}. It is a popular algorithm for large networks due to its low computational cost and operates via hierarchical agglomeration. 
+
 \begin{figure*} 
 	\begin{center}
-		\includegraphics[width=\linewidth]{figures/rt_network_ht_period4}
+		\includegraphics[width=0.8\linewidth]{figures/rt_network_ht_period4}
 	\end{center}
 	\caption{Retweet network for period before release of coal commission report}
 	\label{fig:rt_network_bef}
 \end{figure*}	
+
 \begin{figure*} 
 	\begin{center}
-		\includegraphics[width=\linewidth]{figures/rt_network_ht_period3}
+		\includegraphics[width=0.8\linewidth]{figures/rt_network_ht_period3}
 	\end{center}
 	\caption{Retweet network for period after release of coal commission report}
 	\label{fig:rt_network_aft}
 \end{figure*}
 
-Fig. \ref{fig:rt_network_bef} and \ref{fig:rt_network_aft} show the two retweet networks of the period before and after the release of the coal commission's report respectively. Within each network, for communities with 500 nodes or more, the top 5 hashtags that are used in the community are also displayed.  
+Fig. \ref{fig:rt_network_bef} and \ref{fig:rt_network_aft} show the two retweet networks of the period before and after the release of the coal commission's report respectively. Within each network, for communities with 500 nodes or more, the top 5 hashtags that are used in the community are also displayed. Looking at Table \ref{table:rt_network_mod}, the modularity scores are not significantly different from each other before and after the release of the coal commission report. This suggests that there has not been much change in the community structure of the retweet networks. 
+
+
+
+\begin{table}[htbp]
+\begin{center}
+	\caption{Modularity scores of coal retweet networks for the entire period, before the release of the coal commission's report and after the release of the coal commission's report}
+	\label{table:rt_network_mod}
+	\begin{tabular}{| l | p{2.5cm} | p{2.5cm} | l |}
+		\hline
+		Period & Before release of coal commission report & After release of coal commission report & Overall \\ \hline
+		Modularity score & 0.500 & 0.497 & 0.470 \\ \hline
+	\end{tabular}
+\end{center}
+\end{table}
+
 
 \section*{Discussion} \label{sec:discussion}
 \subsection*{Limitations}
@@ -371,20 +401,40 @@ No one method of sentiment analysis can replicate something that is fully manual
 
 \subsubsection*{The German Language} 
 % limitations of language analysis in German 
-% [T: 500, C: ]
+% [T: 300, C: 300]
+Majority of the work done on sentiment analysis is conducted on the English language. In this study, the analysis is done on tweets in German as the policy case study is in Germany. There is one drawback of analysing German text with a dictionary-based approach of sentiment analysis -- compound words are a significant feature of the language, while dictionary methods typically only contain the root words. As a result, the method used here in this study will not pick up compound words. This is because the method of splitting sentences into words here is to identify the spaces in the words. Compound words will thus not be identified as they will not match either of the root words when the words in the sentences are matched to entries in the SentiWS dictionary. 
 
-Majority of the work done on sentiment analysis is conducted on the English language. In this study, the analysis is done on tweets in German as the policy case study is in Germany. 
+Another feature of the German language is the use of declension. German declension is the paradigm used by the language to define all the ways articles, adjectives and sometimes nouns can change their form to reflect their role in the sentence: subject, object, etc. The ending of words can therefore take different forms, depending on the language case or grammatical gender in use. Within SentiWS, this is accounted for -- Fig. \ref{fig:sentiws_example} shows that for each root word, there are also its inflections in the same entry. Therefore, when a word is identified in the sentiment analysis process, so will all of its inflections, and all word forms will have the same polarity score. However, in the supporting analysis of word shifts, a simple frequency method is used to identify the top words driving the differences between texts, hence all the word forms are distinguishable. This can be seen in Fig. \ref{fig:wordshift_coalcomm_report} and Fig. \ref{fig:wordshift_coal_climate} where multiple word forms of the same root word appear. 
 
 \subsubsection*{Social Media data} 
 % drawbacks of using social media data, how to handle 
-% [T: 500, C: ]
-%% emojis
+% [T: 700, C: 700]
+In addition to the limitations of a lexicon-based sentiment analysis method as well as the difficulties in analysing the German language, the biggest consideration when evaluating this study is the source of the data: Twitter. Twitter is a form of social media, and while using social media data offers many benefits as an alternative to conventional surveys in measuring public opinion, it also has several limitations as well. 
+
+Firstly, the assumption that Twitter posts represent an honest expression of public opinion may not necessarily hold true. The public nature of social media could induce a stronger social desirability bias than in the context of traditional survey responses, but the extent to which this occurs is unknown \cite{Klasnja2018}. 
+
+% representativeness 
+In comparison to traditional surveys, one crucial advantage that is lost with social media is the opportunity to control the sampling frame. Traditional surveys attempt to guarantee a known probability of any individual in the population being asked a survey question. With social media, however, the sampling is random, and thus it is not known the likelihood that someone has been asked a ``question'', nor the likelihood of a response \cite{Klasnja2018}. In analysing public opinion on social media, researchers do not ask the ``respondents'' a question, but rather depend on participants to reveal their opinion. This may raise an issue with the representativeness of the responses, as the set of people offering unprompted opinions on a topic may be more passionate or different in many ways from the set of people who offer opinions on that topic when explicitly asked. There is thus a big missing data problem when trying to analyse public opinion on Twitter, and results from Twitter cannot be generalised directly from Twitter responses to standard survey populations of interest. 
+
+Furthermore, Twitter users are not representative of national populations, something that is well documented [CITE]. In the United States, it has been found that the most populous counties are overrepresented [CITE], and there are also significant biases towards younger users and users of higher income when comparing geotagged tweets and census data [CITE]. Evaluating the representativeness of Twitter users in Germany, however, is not straightforward, as Twitter does not record precise demographic information. Analysis of the geographic representation of users in Germany contributing to policy topics on Twitter reveal that there is a higher concentration of users in constituencies of high population density such as Berlin, Hamburg, Munich, and Cologne [CITE], but it is unclear whether these figures are representative of the national population. As such, in this study, there has not been an attempt to generalise the results about the coal debate on Twitter to the national coal debate, as there is not enough information about the user demographics on Twitter to be able to make these generalisations. 
+
+% slang, emojis 
+Another aspect of analysing social media data is the language differences used on social media. Texts in social media are often short, and thus using a dictionary that is trained using general texts like SentiWS might not be appropriate as it does not have sufficient aggregated information to measure the overall sentiment of a post. Moreover, slang and colloquial language is often used on social media, comprising new expressions that may not be represented on standard dictionaries. The short, unstructured, fast-evolving, and domain-specific nature of posts on social media mean that it is difficult to apply general language analysis tools to social media posts \cite{Hu2013}. 
+
+In addition to the usage of slang on social media, the use of emoticons are also prevalent on social media. Emoticons are primarily face-based and represent happy or sad feelings, although a wide range
+of non-facial variations exist: for instance, <3 represents a heart and expresses love or affection. In the simplest form of a dictionary-based methods for sentiment analysis, emoticons are discarded when pre-processing the text, and thus could lead to the loss of valuable information when aggregating sentiment. One way to tackle this is to extract polarity from emoticons, and attach a polarity weight to each emoticon. This can then be used in combination with the dictionary method to get a better overall sentiment score for a tweet. However, issues remain as to how to scale the polarity of emoticons, which can be subjective across different users. 
 
 \subsection*{Policy Implications} 
 % Implications of findings 
 % [T: 1K, C: ]
+% Increasingly negative sentiment 
+
+% Unpopular?
+
+% No consensus? 
 
 
+\section*{Conclusion} \label{sec:conclusion}
 
 %%% END TEXT %%%
 
