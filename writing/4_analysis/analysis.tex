@@ -29,10 +29,13 @@
 %\keywords{Keyword 1 $|$ Keyword 2 $|$ Keyword 3 $|$ ...} 
 
 \begin{abstract}
-Executive Summary goes here
+Master of Public Policy 2020 \\
+Thesis Supervisor: Prof. Slava Jankin \\
+Practice Institution: Mercator Research Institute on Global Commons and Climate Change 
 \end{abstract}
 
 %\dates{This manuscript was compiled on \today}
+\setcounter{secnumdepth}{0}
 
 \begin{document}
 \onehalfspacing
@@ -40,20 +43,32 @@ Executive Summary goes here
 \thispagestyle{firststyle}
 \ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
 
-\section*{Introduction} \label{sec:introduction}
+% Content Page
+\clearpage
+{
+	\hypersetup{linkcolor=black}
+	\fontfamily{lmss}
+	\tableofcontents
+}
+
+\clearpage
+\section{Executive Summary} \label{sec:summary}
+
+\clearpage
+\section{Introduction} \label{sec:introduction}
 % [T: 1500, C: 1500]
 % Coal exit
- Coal combustion contributes to more than a third of today's carbon emissions, and is a major contributor to local adverse effects on the environment and public health.  In line with a global climate ambition to limit the increase in global average temperature to well below 2 \si{\degree}C as denoted by the Paris Agreement, all countries must achieve a rapid decarbonisation of all sectors by the middle of this century \cite{Figueres2017}. Much of the research on this topic has focused on the energy sector due to its high remaining emissions but comparatively cheap abatement potential \cite{Armstrong2016}. 
+Coal combustion contributes to more than a third of today's carbon emissions, and is a major contributor to local adverse effects on the environment and public health.  In line with a global climate ambition to limit the increase in global average temperature to well below 2 \si{\degree}C as denoted by the Paris Agreement, all countries must achieve a rapid decarbonisation of all sectors by the middle of this century \cite{Figueres2017}. Much of the research on this topic has focused on the energy sector due to its high remaining emissions but comparatively cheap abatement potential \cite{Armstrong2016}. 
 
 \subsection*{The problem with coal}
-Indeed, coal-fired power plants remain one of the key drivers of global warming \cite{Edwards2019,Zhao2019} There are also  additional environmental costs in the form of airborne pollutants, which in turn have a negative effect on human health as well. This leads to coal having a high environmental and social cost. Lignite has the highest environmental cost in electricity generation, at 20.81 Euro Cents/KWh, followed by hard coal at 18.79 Euro Cents/kWh [CITE]. Studies show that phasing out coal yields substantial local environmental and health benefits that outweigh direct policy costs \cite{Rauner2020}. As a result, a coal phase-out presents an attractive option for coal-intensive countries to reduce their carbon emissions.
+Indeed, coal-fired power plants remain one of the key drivers of global warming \cite{Edwards2019,Zhao2019} There are also  additional environmental costs in the form of airborne pollutants, which in turn have a negative effect on human health as well. This leads to coal having a high environmental and social cost. Lignite has the highest environmental cost in electricity generation, at 20.81 Euro Cents/KWh, followed by hard coal at 18.79 Euro Cents/kWh \cite{Oei2020}. Studies show that phasing out coal yields substantial local environmental and health benefits that outweigh direct policy costs \cite{Rauner2020}. As a result, a coal phase-out presents an attractive option for coal-intensive countries to reduce their carbon emissions.
 
 When referring to coal, there are two different types that are often referred to: hard coal and lignite. Lignite, sometimes referred to as brown or soft coal, has a lower carbon content and fuel value than hard coal, and is not mined below ground like hard coal but rather in opencast mines \cite{Appunn2019}. 
 
 \subsection*{Coal in Germany}
 Germany is the world's largest producer of lignite, where lignite and hard coal provide almost 40\% of electricity in the country. One of the reasons for continued lignite-fired power production in Germany is the access to lignite resources in the country, concentrated in 3 areas: the Rhineland, Lusatia, and Central Germany \cite{AgoraEnergiewende2019}. 
 
-Germany has experienced a coal phase-out before, with that of the mining of hard coal. From 1958, hard coal production and employment in Germany started to decline due to a price drop that resulted from the liberalisation of coal prices that was previously regulated by the European Coal and Steel Community (ECSC), the predecessor of the European Union (EU)) \cite{Oei2019}. Domestic hard coal faced fierce competition from other comparatively cheaper energy sources: imported coal from overseas, as well as imported oil.  In 2007, with the growing influence of the EU, Germany ended its subsidies for hard coal production, and the last active hard coal mine in Germany was closed at the end of 2018 \cite{Appunn2018}, bringing an end to a long history of hard coal mining in the country. Hard coal-fired power production, however, remains active in the country, with imported coal coming from Russia, Colombia, and the United States [CITE]. 
+Germany has experienced a coal phase-out before, with that of the mining of hard coal. From 1958, hard coal production and employment in Germany started to decline due to a price drop that resulted from the liberalisation of coal prices that was previously regulated by the European Coal and Steel Community (ECSC), the predecessor of the European Union (EU)) \cite{Oei2019}. Domestic hard coal faced fierce competition from other comparatively cheaper energy sources: imported coal from overseas, as well as imported oil.  In 2007, with the growing influence of the EU, Germany ended its subsidies for hard coal production, and the last active hard coal mine in Germany was closed at the end of 2018 \cite{Appunn2018}, bringing an end to a long history of hard coal mining in the country. Hard coal-fired power production, however, remains active in the country, with imported coal coming from Russia, Colombia, and the United States. 
 
 The phase-out of hard coal mining in Germany was thus largely economically motivated. In contrast, lignite mining remains a profit-making business in Germany, with the opencast pit mines located near the power plants \cite{Appunn2019}. As a result, in order to phase out lignite mining in Germany, it has to be directed by the government as part of its environmental and energy policies. Consequently, the current German government comprising the Chancellor Angela Merkel's conservative CDU/CSU\footnote{Christian Democratic Union, Christian Social Union} and the Social Democrats (SPD) agreed to set up a special commission consisting of different stakeholders to manage a coal phase-out in Germany. This was formally introduced in their coalition contract in 2018 \cite{Wehrmann2018}.  
 
@@ -64,7 +79,7 @@ Multi-stakeholder commissions present an important instrument for incorporating 
 The use of multi-stakeholder commissions have been used in environmental policy decision-making in Germany before, in the planning of a nuclear phase-out. Although an exit from nuclear power had been previously agreed to by the federal government, an external expert commission, titled the ``Commission to Review the Financing for the Phase-out of Nuclear Energy'', was set up in 2015 to manage the financing of the nuclear phase-out. The commission was tasked with ensuring that the ``polluter pays'' principle (where the polluters refer to nuclear power plant operators) was upheld and that taxpayers would not end up footing the cost of decommissioning nuclear plants and storing nuclear waste \cite{Appunn2017}. 
 
 \subsection*{The German Coal Commission}
-The coal commission, formally known as the Commission on Growth, Structural Change and Employment, is another example of a multi-stakeholder commission. It was set up by the German government in 2018 under the Federal Ministry for Economy and Energy (BMWi), and was tasked with developing an overarching approach to managing the coal phase-out’s technical, legal, economic and social impacts. This was done so under the backdrop of Germany looking likely to miss its 2020 climate targets, and increasing international pressure for greater climate action [CITE]. 
+The coal commission, formally known as the Commission on Growth, Structural Change and Employment, is another example of a multi-stakeholder commission. It was set up by the German government in 2018 under the Federal Ministry for Economy and Energy (BMWi), and was tasked with developing an overarching approach to managing the coal phase-out’s technical, legal, economic and social impacts. This was done so under the backdrop of Germany looking likely to miss its 2020 climate targets \cite{der2017projektionsbericht}, and increasing international pressure for greater climate action. 
 
 The coal commission was given the mandate to develop a plan to gradually reduce and shut down coal-fired power generation, including a completion date and the necessary accompanying legal, economic, social, renaturalisation and structural measures. \cite{Groll2019} The commission comprised key stakeholders from businesses and industries, the trade unions, energy industry, as well as representatives from coal-mining regions in Germany, the Parliament, administration, environmental NGOs, and scientists \cite{AgoraEnergiewende2019}. 
 
@@ -83,18 +98,17 @@ One alternative to this is to measure public opinion using social media data. So
 
 Here, tweets from Twitter are used to represent public opinion on social media, in part due to their high granularity which allows for observations on swiftly changing temporal patterns on topic salience. In addition, Twitter is commonly used as a source of information about breaking news events, and journalists and traditional media often solicit feedback from the public through social media. This presents an opportunity to study the public opinion about a topic through looking at tweets. 
 
-\section*{Related Work} \label{sec:relatedwork}
-% [T: 750, C: 380]
+\section{Related Work} \label{sec:relatedwork}
+% [T: 750, C: 450]
 Twitter has been used to explore a variety of social and linguistic phenomena \cite{Cao2012, Lin2013, Lin2014}, and has also been used in the study of politics, in political responsiveness \cite{Barbera2019}, and also in political attention \cite{Hemphill2014, Shapiro2017}. It is also often used in the analysis of public opinion with regards to politics \cite{DiGrazia2013, Vaccari2013, Barbera2019}.
 
 Twitter has also been used as a medium to analyse human sentiment through the analysis of variations in the frequency of specific words used by individuals. In \cite{Dodds2011}, Dodds et. al. develop a tool for measuring expressed happiness via positive and negative sentiment in large-scale text corpora. Since its development, the tool, named the ``hedonometer'', has been implemented in studies involving the happiness of cities and states \cite{Bliss2012}, the happiness of the English language as a whole \cite{Kloumann2012}, the relationship between individuals' happiness and that of those they connect with \cite{Mitchell2013}, and as a method of unsolicited public opinion polling on climate change \cite{Cody2015}. Other examples of applying sentiment analysis to tweets include studying public perception of climate change through temperature anomalies \cite{Moore2019}. 
 
-The category of sentiment analysis used by Dodds et. al. is a dictionary-based method, which involves scoring words and sentences based on an existing dictionary with sentiment scores for individual words, followed by some aggregation. However, there are other methods of using sentiment analysis, namely involving classification methods. This may involve the use of machine algorithms, which train on an input of manually classified data, in order to classify a larger set of un-labelled data. This method is used in \cite{Stukal2019}, which uses neural networks to classify the political orientation of ``bots'' (automated posters) on Twitter. 
+The category of sentiment analysis used by Dodds et. al. is a dictionary-based method, which involves scoring words and sentences based on an existing dictionary with sentiment scores for individual words, followed by some aggregation. However, there are other methods of using sentiment analysis, namely involving classification methods. This may involve the use of machine algorithms, which train on an input of manually classified data, in order to classify a larger set of un-labelled data. This method is used in \cite{Stukal2019}, which uses neural networks to classify the political orientation of ``bots'' (automated posters) on Twitter. Other methods that are commonly used in sentiment analysis include lexical-based methods like LIWC \cite{Tausczik2009}, SentiWordNet \cite{Esuli2006}, and machine-learning based methds like SASA \cite{Wang2012}, PANAS-t \cite{Goncalves2013a}, SenticNet \cite{Cambria2010}, and SentiStrength \cite{Thelwall2017}.
 
-% network analysis
-Other work have looked at the debate on Twitter on climate change. In \cite{Williams2015}, Williams et. al. conduct a network analysis on the climate change debate on Twitter, classifying active users in the dataset based on their expressed attitude towards climate change - as ``activists'', ``sceptics'', or ``neutral''. The networks were then constructed by looking at the frequency of tweets, as well as the interactions between the different user groups. The authors found that most users only interacted with other like-minded users within the same community. However, they also found communities with interactions from different user groups, where messages between like-minded users carried positive sentiments, while messages between sceptics and activists carried negative sentiment. Network analysis of social media is a vibrant field of research, and there are multiple studies looking at networks on Twitter, in particular, retweet networks \cite{Cherepnalkoski2016}. 
+Other work have looked at the debate on Twitter on climate change. In \cite{Williams2015}, Williams et. al. conduct a network analysis on the climate change debate on Twitter, classifying active users in the dataset based on their expressed attitude towards climate change - as ``activists'', ``sceptics'', or ``neutral''. The networks were then constructed by looking at the frequency of tweets, as well as the interactions between the different user groups. The authors found that most users only interacted with other like-minded users within the same community. However, they also found communities with interactions from different user groups, where messages between like-minded users carried positive sentiments, while messages between sceptics and activists carried negative sentiment. Network analysis of social media is a vibrant field of research, and there are multiple studies looking at networks on Twitter, in particular, retweet networks \cite{Cherepnalkoski2016, Stewart2018}. 
 
-\section*{Task} \label{sec:task}
+\section{Task} \label{sec:task}
 % [T: 300, C: 280]
 This project aims to identify whether there was an effect on public opinion on the German coal exit throughout the entire decision-making process of the coal commission. Specifically, this project seeks to answer the question: did the establishment of a multi-stakeholder, corporatist process like the Coal Commission lead to societal consensus? To do so, significant events throughout the coal commission process have to be identified and a measure for public opinion has to be designed. Here, public opinion can be abstracted from sentiment analysis of tweets made throughout the timeline of the coal commission's lifetime using dictionary methods and polarity weighting. A suitable dictionary for the analysis of the German language also has to be used. 
 
@@ -102,7 +116,7 @@ In addition, in order to understand the public reaction to the deliberative proc
 
 Finally, in order to answer the question of whether a consensus was reached in the public across the process of the coal commission, comparison periods have to be defined, and a measure for measuring consensus has to be drawn up as well. This can be done either by looking at variation in sentiment scores over time, or via other methods such as analysis of interaction networks between Twitter users. 
 
-\section*{Data} \label{sec:data}
+\section{Data} \label{sec:data}
 % [T: 400, C: 410]
 The data used in this project was collected via a two part process, using two python packages: \texttt{twint} to download the tweets based on specific queries, and \texttt{tweepy} to populate the tweets with extended tweet information via the Twitter API. 
 
@@ -119,13 +133,13 @@ The total number of tweets collected in the coal dataset is 224246. The total nu
 
 \begin{figure} 
 	\begin{center}
-		\includegraphics[width=0.9\linewidth]{figures/sa_tweet_frequency_zoom2}
+		\includegraphics[width=0.9\linewidth]{figures/sa_tweet_frequency_zoom4}
 	\end{center}
-	\caption{Daily frequency of German tweets in coal dataset over coal commission process}
+	\caption{\textbf{Daily frequency of German tweets in coal dataset over coal commission process.} The frequency remains quite stable over time, showing a slight increase over time, with periods of increased activity in December 2017, between September 2018 and February 2019, and in January 2020.}
 	\label{fig:tweet_frequency}
 \end{figure}
 
-\section*{Method} \label{sec:method}
+\section{Method} \label{sec:method}
 % [T: 800, C: 750]
 \subsection*{Sentiment Analysis}
 % Explanation of sentiment analysis 
@@ -153,9 +167,9 @@ where \(P(w)\) is the probability that \(w\) occurs and \(P(w_1 \& w_2)\) is the
 
 \begin{figure} 
 	\begin{center}
-		\includegraphics[width=0.5\linewidth]{figures/sentiws_example}
+		\includegraphics[width=0.5\linewidth]{figures/sentiws_example2}
 	\end{center}
-	\caption{Example of scoring a tweet using the polarity weighting of words from SentiWS}
+	\caption{Example of scoring a tweet using the polarity weighting of words from SentiWS. Source: \cite{REMUS10.490}}
 	\label{fig:sentiws_example}
 \end{figure}
 
@@ -194,14 +208,14 @@ Equation \ref{eq:text_difference} shows the difference between the normalised sc
 
  
 
-\section*{Results} \label{sec:results}
+\section{Results} \label{sec:results}
 % [T: 3.5K]
 
 \begin{figure} 
 	\begin{center}
 		\includegraphics[width=\linewidth]{figures/sa_dailyavgsenti_7dma_baseline2}
 	\end{center}
-	\caption{Sentiment score of tweets over time, expressed as a 7 day moving average}
+	\caption{\textbf{Sentiment score of tweets over time, expressed as a 7 day moving average.} Both scores show a negative trend over time, and there is greater variation in the average sentiment scores for coal tweets compared to climate.}
 	\label{fig:tweet_score}
 \end{figure}
 
@@ -212,7 +226,7 @@ Fig. \ref{fig:tweet_score} shows the 7 day moving average of tweet scores in the
 
 Regression analysis also shows that the two time series have a negative slope. The slope of the coal timeseries is $-1.91 \times 10^{-5}$ and the slope of the climate timeseries is $-2.64 \times 10^{-5}$. In order to perform linear regression on dates, the dates are first converted into ordinal numbers. This suggests that the language used in both coal and climate discussions become more negative over time, of which the coal commission could have had an effect on. 
 
-{\color{red}linreg table?}
+% {\color{red}linreg table?}
 
 \subsubsection*{Variation in coal and climate scores} % similar before and after but not during 
 Another observation that can be made is that the shape of the coal and climate timeseries correlate quite well both before and after the process of the coal commission, but not during. Looking at Fig. \ref{fig:tweet_score}, by breaking down the dates into three periods -- i. January 2017 to December 2017, ii. January 2018 to April 2019 and iii. May 2019 to February 2020, the differences in the sentiment score timeseries can be dissected. The spikes in the coal and climate tweet sentiment scores follow quite closely to each other in the first period, as well as in the third. However, they differ greatly in the second period, largely due to the variation of scores in the coal debate. 
@@ -222,7 +236,7 @@ Another observation that can be made is that the shape of the coal and climate t
 In addition to the timeseries trends, comparing the two sentiment score timeseries of coal and climate tweets, it can be seen that there is a larger variation in sentiment scores in the coal dataset compared to that of climate. This is evident across the entire time period of the dataset. Throughout 2017, the variation in climate scores is 0.057, compared to 0.116 in the scores of coal tweets. This difference increases in the period surrounding as well as during the coal commission process from January 2018 to April 2019, where the variation in climate tweet scores is 0.061, compared to 0.217 in the scores of coal tweets. The difference in variation of the tweet scores between the datasets declines after the coal commission process, with a variation of 0.048 in climate tweets and 0.096 in coal tweets from May 2019 to February 2020. 
 
 % table on absolute variation 
-{\color{red}FIX NAN VALUES}
+% {\color{red}FIX NAN VALUES}
 \begin{table}[htbp]
 	\begin{center}
 		\caption{Variation in daily average  and 7 day moving average sentiment scores of coal and climate tweets}
@@ -263,7 +277,7 @@ Fig. \ref{fig:tweet_count_event_timeline} shows the daily count of tweets throug
  
 \begin{figure*} 
 	\begin{center}
-		\includegraphics[width=\textwidth]{figures/sa_tweet_score_event_timeline}
+		\includegraphics[width=\textwidth]{figures/sa_tweet_score_event_timeline3}
 	\end{center}
 	\caption{Daily average sentiment score of tweets against events throughout coal commission process}
 	\label{fig:tweet_score_event_timeline}
@@ -286,7 +300,7 @@ In addition, there was another tweet posted on 9 April 2019, that also had a hig
 	\textbf{@julia\_verbinden}: Großartig! \#DieAnstalt im @ZDF mit ``\#Scheuermann'' auf der Titanic, die ca 6 Grad Celsius vom Kurs nach \#Paris abgekommen ist. Mit ner \#Kohlekommission, die einen sowieso-\#Kohleausstieg vorschlägt, mit absurden Obergrenzen für \#Solarenergie uvm. \#Klimakrise \#FridaysForFuture\footnote{Translation: That is great! The institution on @ZDF with ``Scheuermann'' on the Titanic, which is about 6 degrees Celsius off course to Paris. With a coal commission, which proposes a coal exit anyway, with absurd upper limits for solar energy and much more.  \#Climate crisis \#FridaysForFuture}
 \end{displayquote}
 
-Looking at the two tweets in mention, the first observation that can be made is that they are both made by high-profile figures in Germany, which explains the high traction gained by the tweets. In the first example, Luisa Neubauer, the author of the tweet, is a German climate activist and one of the main organisers of the Fridays For Future movement in Germany, a school strike to protest the global climate situation [CITE]. In the second example, Dr. Julia Verbinden is a member of the German parliament, representing the Green Party [CITE]. Both of the authors are thus supporters of strong climate action, and it is clear from the content of the tweets that they are not using positive words to express support for the coal commission. In the first example, the two highest scoring words -- ``gut'' and ``schön''\footnote{Translation: Good, Nice} are used in an ironic tone to criticise the German government for supporting what is perceived to be inadequate climate action proposed by the coal commission. In the second example, the word ``Großartig''\footnote{Translations: Great} is used to express support for a satirical show on German television that presented about the findings of the coal commission. 
+Looking at the two tweets in mention, the first observation that can be made is that they are both made by high-profile figures in Germany, which explains the high traction gained by the tweets. In the first example, Luisa Neubauer, the author of the tweet, is a German climate activist and one of the main organisers of the Fridays For Future movement in Germany, a school strike to protest the global climate situation \cite{FF20, FF20G}. In the second example, Dr. Julia Verbinden is a member of the German parliament, representing the Green Party \cite{Bundestag2020}. Both of the authors are thus supporters of strong climate action, and it is clear from the content of the tweets that they are not using positive words to express support for the coal commission. In the first example, the two highest scoring words -- ``gut'' and ``schön''\footnote{Translation: Good, Nice} are used in an ironic tone to criticise the German government for supporting what is perceived to be inadequate climate action proposed by the coal commission. In the second example, the word ``Großartig''\footnote{Translations: Great} is used to express support for a satirical show on German television that presented about the findings of the coal commission. 
 
 In both cases, the drivers for the spike in average tweet scores are not specific events, but rather due to Twitter posts by relatively high-profile figures on the network within the coal debate that criticise the coal commission or an element of the coal commission's report. 
 
@@ -298,7 +312,7 @@ Compared to positive peaks, there is a much larger amount of negative peaks seen
 	\footnote{Translation: Coal or forest, jobs or the environment - the dispute over the \#Hambach Forest reveals that the issue of climate protection is becoming increasingly emotional. http://bit.ly/2AAXTvX \#Hambi \#Go on Hambi}
 \end{displayquote}
 
-On Twitter, in addition to the text shown above, the post contains an embedded video which documents the protests by climate activists in the Hambach Forest in the state of North-Rhine Westphalia in Germany. The issue surrounding the Hambach forest was a point of contention during the process of the coal commission. In August 2018, the German energy company RWE rejected calls for a moratorium on the clearing of the forest as part of lignite mining, and said that it would continue mining operations there [CITE]. This was heavily criticised by environmental groups [CITE], as well as by several member groups of the coal commission, some of which who threatened to leave the commission if RWE did not halt its mine expansion activities in the region while the coal commission was still in progress [CITE]. The situation continued to escalate into September, as anti-coal activists began to occupy the forest [CITE]. The debate continued, with RWE saying that not clearing the forest would cost billions of euros and that the forest could not be saved [CITE], with environmental NGOs saying otherwise [CITE].
+On Twitter, in addition to the text shown above, the post contains an embedded video which documents the protests by climate activists in the Hambach Forest in the state of North-Rhine Westphalia in Germany. The issue surrounding the Hambach forest was a point of contention during the process of the coal commission. In August 2018, the German energy company RWE rejected calls for a moratorium on the clearing of the forest as part of lignite mining, and said that it would continue mining operations there \cite{Knuf2018}. This was heavily criticised by environmental groups \cite{Schafer2018}, as well as by several member groups of the coal commission, some of which who threatened to leave the commission if RWE did not halt its mine expansion activities in the region while the coal commission was still in progress \cite{Wehrmann2018a}. The situation continued to escalate into September, as anti-coal activists began to occupy the forest and police action was taken to clear the activist camp \cite{CEW2018}. The debate continued, with RWE saying that not clearing the forest would cost billions of euros and that the forest could not be saved \cite{CEW2018a}, with environmental NGOs saying otherwise \cite{Kopiske2018}.
 
 The tweet about the Hambach forest, thus, represents the view of the entire debate around the clearing of the Hambach forest with respect to the coal exit from environmentalists' perspective. This is reflected by the use of words with negative sentiments, contributing to a tweet that is critical about the coal exit. 
 
@@ -326,7 +340,7 @@ To look at how the language and sentiment changed over time, a method known as `
 	\begin{center}
 		\includegraphics[width=\linewidth]{figures/wordshift_coalcomm_report_composite}
 	\end{center}
-	\caption{\textbf{Word shift graph comparing tweets made before and after the release of the report of the coal commission.} The reference text is roughly 112000 tweets from the coal dataset from 1 January 2017 to 25 January 2019. The comparison texts is roughly 113000 tweets from the coal dataset from 26 January 2019 to February 29 2020. An orange bar indicates a word with a positive polarity score. A blue bar indicates a word with a negative polarity score. Words on the right side are contributing to an increase in positive sentiment after the release of the coal commission report. Words on the left side are contributing to an increase in negative sentiment after the release of the coal commission report. Words with a blue bar on the left side of the graph and words with an orange bar on the right side of the graph are more prevalent in the tweets before the release of the coal commission's report. Words with a blue bar on the right side of the graph and words with an orange bar on the left side of the graph are more prevalent in tweets after the release of the coal commission's report. The subplot on the right shows the split in total word scores before and after the release of the coal commission report, sorted by word polarity. \footnotemark}
+	\caption{\textbf{Word shift graph comparing tweets made before and after the release of the report of the coal commission.} The reference text is roughly 112000 tweets from the coal dataset from 1 January 2017 to 25 January 2019. The comparison texts is roughly 113000 tweets from the coal dataset from 26 January 2019 to 29 February 2020. An orange bar indicates a word with a positive polarity score. A blue bar indicates a word with a negative polarity score. Words on the right side are contributing to an increase in positive sentiment after the release of the coal commission report. Words on the left side are contributing to an increase in negative sentiment after the release of the coal commission report. Words with a blue bar on the left side of the graph and words with an orange bar on the right side of the graph are more prevalent in the tweets before the release of the coal commission's report. Words with a blue bar on the right side of the graph and words with an orange bar on the left side of the graph are more prevalent in tweets after the release of the coal commission's report. The subplot on the right shows the split in total word scores before and after the release of the coal commission report, sorted by word polarity. \footnotemark}
 	\label{fig:wordshift_coalcomm_report}
 \end{figure*}
 \footnotetext{Translation: good, criticism, wrong, destruction, endangered, wants, blocked, criticized, better, end, block, worry, safe, problem, fight, good, fear, destroyed, threatened, helps, important, next, help, fast, faster, more important, success, protest, fight, solution, love, save, compensation, expansion, solidarity}
@@ -347,7 +361,7 @@ In addition, the split in the balance of scores arising from positive and negati
 	\begin{center}
 		\includegraphics[width=\linewidth]{figures/wordshift_coal_climate_composite}
 	\end{center}
-	\caption{\textbf{Word shift graph comparing coal tweets to climate tweets.}}
+	\caption{\textbf{Word shift graph comparing coal tweets to climate tweets.} The reference text is roughly 777000 tweets from the climate dataset from 1 January 2017 to 29 February 2020. The comparison texts is roughly 224113000 tweets from the coal dataset from 1 January 2017 to 29 February 2020.}
 	\label{fig:wordshift_coal_climate}
 \end{figure*}
 
@@ -357,9 +371,9 @@ In addition, the split in the balance of scores arising from positive and negati
 % should some of this go to Method instead?
 \begin{figure*} 
 	\begin{center}
-		\includegraphics[width=0.8\linewidth]{figures/rt_network_ht}
+		\includegraphics[width=0.8\linewidth]{figures/rt_network_ht2}
 	\end{center}
-	\caption{Retweet network of the coal debate on Twitter. The nodes represent Twitter users, and the edges between nodes represent the retweet relations. The node size is proportional to the total number of times the user has been retweeted by other members. The node colours correspond to the community that the community detection algorithm has identified it to be part of.}
+	\caption{\textbf{Retweet network of the coal debate on Twitter.} The nodes represent Twitter users, and the edges between nodes represent the retweet relations. The node size is proportional to the total number of times the user has been retweeted by other members. The node colours correspond to the community that the community detection algorithm has identified it to be part of.}
 	\label{fig:rt_network}
 \end{figure*}	
 
@@ -378,7 +392,6 @@ where $m$ is the total number of edges in the network, $A_{ij}$ are the elements
 Community detection algorithms perform maximisation of modularity, and from the definition of modularity above, a good partitioning of a network is therefore one in which there are fewer than expected edges between the communities. 
 
 In this study, the fast-greedy community detection algorithm is used \cite{Clauset2004}. It is a popular algorithm for large networks due to its low computational cost and operates via hierarchical agglomeration. 
-
 
 \begin{figure*} 
 	\begin{center}
@@ -415,7 +428,7 @@ One limitation of the fast-greedy algorithm used here is that it tends to form q
 \end{table}
 
 
-\section*{Discussion} \label{sec:discussion}
+\section{Discussion} \label{sec:discussion}
 \subsection*{Limitations}
 \subsubsection*{Sentiment Analysis} 
 % caveats of using dictionary methods for sentiment analysis 
@@ -445,7 +458,7 @@ Firstly, the assumption that Twitter posts represent an honest expression of pub
 % representativeness 
 In comparison to traditional surveys, one crucial advantage that is lost with social media is the opportunity to control the sampling frame. Traditional surveys attempt to guarantee a known probability of any individual in the population being asked a survey question. With social media, however, the sampling is random, and thus it is not known the likelihood that someone has been asked a ``question'', nor the likelihood of a response \cite{Klasnja2018}. In analysing public opinion on social media, researchers do not ask the ``respondents'' a question, but rather depend on participants to reveal their opinion. This may raise an issue with the representativeness of the responses, as the set of people offering unprompted opinions on a topic may be more passionate or different in many ways from the set of people who offer opinions on that topic when explicitly asked. There is thus a big missing data problem when trying to analyse public opinion on Twitter, and results from Twitter cannot be generalised directly from Twitter responses to standard survey populations of interest. 
 
-Furthermore, Twitter users are not representative of national populations, something that is well documented [CITE]. In the United States, it has been found that the most populous counties are overrepresented [CITE], and there are also significant biases towards younger users and users of higher income when comparing geotagged tweets and census data [CITE]. Evaluating the representativeness of Twitter users in Germany, however, is not straightforward, as Twitter does not record precise demographic information. Analysis of the geographic representation of users in Germany contributing to policy topics on Twitter reveal that there is a higher concentration of users in constituencies of high population density such as Berlin, Hamburg, Munich, and Cologne [CITE], but it is unclear whether these figures are representative of the national population. As such, in this study, there has not been an attempt to generalise the results about the coal debate on Twitter to the national coal debate, as there is not enough information about the user demographics on Twitter to be able to make these generalisations. 
+Furthermore, Twitter users are not representative of national populations, something that is well documented \cite{Duggan2015, Mislove2011, Malik2015}. In the United States, it has been found that the most populous counties are overrepresented \cite{Mislove2011}, and there are also significant biases towards younger users and users of higher income when comparing geotagged tweets and census data \cite{Malik2015}. Evaluating the representativeness of Twitter users in Germany, however, is not straightforward, as Twitter does not record precise demographic information. Analysis of the geographic representation of users in Germany contributing to policy topics on Twitter reveal that there is a higher concentration of users in constituencies of high population density such as Berlin, Hamburg, Munich, and Cologne \cite{Fernandez2014}, but it is unclear whether these figures are representative of the national population. As such, in this study, there has not been an attempt to generalise the results about the coal debate on Twitter to the national coal debate, as there is not enough information about the user demographics on Twitter to be able to make these generalisations. 
 
 % slang, emojis 
 Another aspect of analysing social media data is the language differences used on social media. Texts in social media are often short, and thus using a dictionary that is trained using general texts like SentiWS might not be appropriate as it does not have sufficient aggregated information to measure the overall sentiment of a post. Moreover, slang and colloquial language is often used on social media, comprising new expressions that may not be represented on standard dictionaries. The short, unstructured, fast-evolving, and domain-specific nature of posts on social media mean that it is difficult to apply general language analysis tools to social media posts \cite{Hu2013}. 
@@ -470,7 +483,10 @@ This suggests that while efforts to bring together different stakeholders in the
 \subsubsection*{Further Work} 
 There remains many possible avenues for research on the coal debate on Twitter. As discussed in the section on limitations, there are many alternative methods that could be used, such as using machine-learning methods for sentiment analysis, or building a better, and more nuanced dictionary suitable for analysing the language used on social media. However, in order for such research to complement policy-making, it is important to increase the representativeness of the data used. One possible extension of the current work would be to look into the the diversity of the Twitter users in this dataset in order to better understand the bias in using social media data. This could be followed by re-weighting data to balance out the biases, using methods like multilevel regression and post-stratification, which has been used in party and ideological identification on Twitter \cite{Barbera2015}, or to augment Twitter data with demographic information from other sources \cite{Barbera2015a, Bode2016}. 
 
-\section*{Conclusion} \label{sec:conclusion}
+\section{Conclusion} \label{sec:conclusion}
+This study has provided a general exploration of the German tweets on coal debate, through analysis of the tweets' sentiments and retweet networks. The results show that there is a negative trend in the sentiment of tweets over time, which is also reflected in the broader German debate on climate. This increasingly negative sentiment is supported when looking into the specific tweets that are driving the large negative spikes in daily sentiment scores. Further analysis of the content of these tweets show that negative language is being used to express the severity of climate change, and the role that coal plays in it. The coal commission is also, by extension, painted in a negative light. Furthermore, tweets that drive large positive spikes in the sentiment scores are also critical about coal and the role of the coal commission, suggesting that the negative sentiment is more pronounced than what is presented. Despite the increase in negative sentiments on Twitter, however, analysis of the retweet networks reveal that the community structure of the coal tweets do not change significantly, and hence there was not much interaction between different communities on the coal debate on Twitter. This reveals that despite the original intentions of the coal commission to bring together different stakeholders in the coal sector to come to a common result for the coal phase-out in Germany, this aim of consensus-building did not extend to the public on Twitter. 
+
+While the coal commission and the coal exit was well-covered in traditional media, this study provides an overview on the coal debate throughout the coal commission process on the social media site Twitter. Through social media, the general public can learn about current events surrounding the coal commission and the coal exit in Germany, and display their own opinions about the issues as well. Twitter may be a useful resource in understanding public opinion, as well as an unsolicited public opinion tool for policy makers. 
 
 %%% END TEXT %%%
 
