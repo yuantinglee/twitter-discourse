@@ -154,19 +154,22 @@
 %% If not, try to use pnas2011.bst instead
 %% If both aren't available, fall back to
 %% unsrtnat
-\RequirePackage[numbers,sort&compress,merge]{natbib}
+\RequirePackage[square]{natbib}
+\setcitestyle{authoryear}
 \setlength{\bibsep}{0.0pt}
-\IfFileExists{pnas-new.bst}{
-  \bibliographystyle{pnas-new}
-}{
-  \IfFileExists{pnas2011.bst}{
-    \bibliographystyle{pnas2011}
-    \PackageWarning{pnas-new}{pnas-new.bst not found; using pnas2011.bst instead}
-  }{
-    \bibliographystyle{unsrtnat}
-    \PackageWarning{pnas-new}{pnas-new.bst and pnas2011.bst not found; falling back to unsrtnat instead}
-  }
-}
+%\IfFileExists{pnas-new.bst}{
+%  \bibliographystyle{pnas-new}
+%}{
+%  \IfFileExists{pnas2011.bst}{
+%    \bibliographystyle{pnas2011}
+%    \PackageWarning{pnas-new}{pnas-new.bst not found; using pnas2011.bst instead}
+%  }{
+%    \bibliographystyle{unsrtnat}
+%    \PackageWarning{pnas-new}{pnas-new.bst and pnas2011.bst not found; falling back to unsrtnat instead}
+%  }
+%}
+\bibliographystyle{apalike}
+
 \renewcommand{\bibsection}{} % Remove header
 \renewcommand\bibfont{\normalfont\sffamily\fontsize{6}{8}\selectfont} % set font to be sans serif
 
@@ -182,6 +185,7 @@
 
 %% Table style
 \RequirePackage{etoolbox}
+\DeclareCaptionFormat{pnasformat}{\normalfont\sffamily\fontsize{7}{9}\selectfont#1#2#3}
 \captionsetup*[table]{labelfont+={small},textfont+={small,sf,bf},skip=10pt,position=above}
 % booktabs provide nice spacing, but rule widths and distances need fixing
 \setlength{\heavyrulewidth}{0.5pt}
@@ -256,7 +260,7 @@
   {#1. }
   []    
 \titleformat{\paragraph}[runin]
-  {\sffamily\small\bfseries}
+  {\sffamily\small}
   {}
   {0em}
   {#1} 
