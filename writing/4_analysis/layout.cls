@@ -55,7 +55,8 @@
 \RequirePackage[framemethod=tikz]{mdframed}
 
 %% Hyperlinking
-\RequirePackage[colorlinks=true, allcolors=blue]{hyperref}
+\definecolor{pyblue}{HTML}{1f77b4}
+\RequirePackage[colorlinks=true, allcolors=pyblue]{hyperref}
 
 %% Set up main title page fonts 
 \newcommand{\headerfont}{\normalfont\sffamily\fontsize{7}{9} \selectfont}
@@ -68,7 +69,7 @@
 \newcommand{\copyrightfont}{\normalfont\rmfamily\fontsize{6}{8}\selectfont}
 
 %% Set URL link color & font
-\renewcommand\UrlFont{\color{black}\sffamily}
+\renewcommand\UrlFont{\color[HTML]{ff7f0e}\sffamily}
 
 %% Author and affiliation
 \RequirePackage{authblk}
@@ -216,8 +217,9 @@
 
 
 % Headers
-\fancyhead[LE,RO]{}
+\fancyhead[LE,RO]{} 
 \fancyhead[LO,RE]{}
+
 % Footers
 \lfoot{}%
 \cfoot{}%
@@ -251,7 +253,7 @@
   {\sffamily\bfseries}
   {\thesubsection.}
   {0.5em}
-  {#1. }
+  {#1 }
   []
 \titleformat{\subsubsection}[runin]
   {\sffamily\small\bfseries}
